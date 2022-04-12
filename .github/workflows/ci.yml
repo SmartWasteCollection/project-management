@@ -17,9 +17,11 @@ jobs:
       - name: Generate PlantUml Images
         uses: grassedge/generate-plantuml-action@v1.5
         with:
-          path: ./images/
+          path: "images/"
           message: "docs(uml): render plantuml diagrams"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate Appendix
-        run: ./doc/appendix/generate-appendix.sh
+        run: |
+          chmod 666 doc/appendix/*.sh
+          ./doc/appendix/generate-appendix.sh
