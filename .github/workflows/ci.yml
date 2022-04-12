@@ -1,0 +1,25 @@
+name: Push Plantuml Diagrams to project-management Repository
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-plantuml-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Generate PlantUml Images
+        uses: grassedge/generate-plantuml-action@v1.5
+        with:
+          path: ./images/
+          message: "docs(uml): render plantuml diagrams"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate Appendix
+        run: ./doc/appendix/generate-appendix.sh
