@@ -1,4 +1,4 @@
-name: Push Plantuml Diagrams to project-management Repository
+name: Generate Appendix
 
 on:
   workflow_dispatch:
@@ -17,11 +17,11 @@ jobs:
       - name: Generate PlantUml Images
         uses: grassedge/generate-plantuml-action@v1.5
         with:
-          path: "images/"
+          path: "uml/"
           message: "docs(uml): render plantuml diagrams"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate Appendix
         run: |
-          chmod 666 doc/appendix/*.sh
+          chmod 777 doc/appendix/*.sh
           ./doc/appendix/generate-appendix.sh
