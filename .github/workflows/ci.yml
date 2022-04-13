@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: Generate PlantUml Images
-        uses: grassedge/generate-plantuml-action@v1.5
+        uses: grassedge/generate-plantuml-action@master
         with:
           path: uml
           message: "docs(uml): render plantuml diagrams"
