@@ -29,8 +29,11 @@ jobs:
           git config --global user.name "SimoneRomagnoli"
           git add doc/appendix/appendix.tex
           git commit -m "docs: generate appendix"
-          git add uml/
-          git commit -m "ci: rename .pm.puml to .puml"
+          if git status | grep -q "Changes not staged for commit"
+          then 
+            git add uml/
+            git commit -m "ci: rename .pm.puml to .puml"
+          fi
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.SR_API_GITHUB_TOKEN }}
@@ -43,8 +46,11 @@ jobs:
           git config --global user.name "alessandro-marcantoni"
           git add doc/appendix/appendix.tex
           git commit -m "docs: generate appendix"
-          git add uml/
-          git commit -m "ci: rename .pm.puml to .puml"
+          if git status | grep -q "Changes not staged for commit"
+          then 
+            git add uml/
+            git commit -m "ci: rename .pm.puml to .puml"
+          fi
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.AM_API_GITHUB_TOKEN }}
