@@ -1,4 +1,4 @@
-echo "section{Appendice}" > doc/appendix/appendix.tex
+echo "\section{Appendice}" > doc/appendix/appendix.tex
 
 while read file; do
   if test -f "$file".pm.puml; then
