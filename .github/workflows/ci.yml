@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   generate-plantuml-images:
@@ -14,43 +15,46 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - name: Generate PlantUml Images
-        uses: grassedge/generate-plantuml-action@master
+      - name: Setting up node
+        uses: actions/setup-node@v1
         with:
-          path: uml
-          message: "docs(uml): render plantuml diagrams"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '16'
+      - name: Add node-plantuml
+        run: npm i -g node-plantuml
+        shell: bash
+      - name: Generate PlantUml Images
+        run: |
+          find uml/ -type f -name "*.puml" > files.txt
+          while read file; do
+            NAME=$(echo "$file" | cut -f 1 -d '.')
+            puml generate "$file" -o "$NAME.png"
+          done < files.txt
+          rm files.txt
+        shell: bash
       - name: Generate Appendix
+        run: ./doc/appendix/generate-appendix.sh
+        shell: bash
+      - name: Commit Changes
         if: github.actor == 'SimoneRomagnoli'
         run: |
-          ./doc/appendix/generate-appendix.sh
           git config --global user.email "simone.romagnoli10@studio.unibo.it"
           git config --global user.name "SimoneRomagnoli"
+          git add uml/
+          git commit -m "docs(uml): render plantuml diagrams"
           git add doc/appendix/appendix.tex
-          git commit -m "docs: generate appendix"
-          if git status | grep -q "Changes not staged for commit"
-          then 
-            git add uml/
-            git commit -m "ci: rename .pm.puml to .puml"
-          fi
+          git commit -m "docs(tex): generate appendix"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.SR_API_GITHUB_TOKEN }}
-      - name: Generate Appendix
+      - name: Commit Changes
         if: github.actor == 'alessandro-marcantoni'
         run: |
-          chmod 777 doc/appendix/*.sh
-          ./doc/appendix/generate-appendix.sh
           git config --global user.email "alessandr.marcanton2@studio.unibo.it"
           git config --global user.name "alessandro-marcantoni"
+          git add uml/
+          git commit -m "docs(uml): render plantuml diagrams"
           git add doc/appendix/appendix.tex
-          git commit -m "docs: generate appendix"
-          if git status | grep -q "Changes not staged for commit"
-          then 
-            git add uml/
-            git commit -m "ci: rename .pm.puml to .puml"
-          fi
+          git commit -m "docs(tex): generate appendix"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.AM_API_GITHUB_TOKEN }}
