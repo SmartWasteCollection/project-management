@@ -13,11 +13,11 @@ jobs:
       - name: Checkout the Repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Generate PlantUml Images
         uses: grassedge/generate-plantuml-action@v1.5
         with:
-          path: "uml/"
+          path: uml
           message: "docs(uml): render plantuml diagrams"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
