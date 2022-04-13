@@ -31,4 +31,4 @@ jobs:
           git commit -m "ci: rename .pm.puml to .puml"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SR_API_GITHUB_TOKEN }}
