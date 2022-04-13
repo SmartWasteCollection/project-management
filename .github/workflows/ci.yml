@@ -24,7 +24,6 @@ jobs:
       - name: Generate Appendix
         if: github.actor == 'SimoneRomagnoli'
         run: |
-          chmod 777 doc/appendix/*.sh
           ./doc/appendix/generate-appendix.sh
           git config --global user.email "simone.romagnoli10@studio.unibo.it"
           git config --global user.name "SimoneRomagnoli"
