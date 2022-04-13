@@ -22,9 +22,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate Appendix
+        if: github.actor == 'SimoneRomagnoli'
         run: |
           chmod 777 doc/appendix/*.sh
           ./doc/appendix/generate-appendix.sh
+          git config --global user.email "simone.romagnoli10@studio.unibo.it"
+          git config --global user.name "SimoneRomagnoli"
           git add doc/appendix/appendix.tex
           git commit -m "docs: generate appendix"
           git add uml/
@@ -32,3 +35,17 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.SR_API_GITHUB_TOKEN }}
+      - name: Generate Appendix
+        if: github.actor == 'alessandro-marcantoni'
+        run: |
+          chmod 777 doc/appendix/*.sh
+          ./doc/appendix/generate-appendix.sh
+          git config --global user.email "alessandr.marcanton2@studio.unibo.it"
+          git config --global user.name "alessandro-marcantoni"
+          git add doc/appendix/appendix.tex
+          git commit -m "docs: generate appendix"
+          git add uml/
+          git commit -m "ci: rename .pm.puml to .puml"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.AM_API_GITHUB_TOKEN }}
