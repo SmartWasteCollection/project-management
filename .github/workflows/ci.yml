@@ -15,6 +15,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
+      - name: Generate SVG Diagrams
+        uses: holowinski/plantuml-github-action@main
+        with:
+          args: -v -tsvg uml/*.puml
       - name: Setting up node
         uses: actions/setup-node@v1
         with:
