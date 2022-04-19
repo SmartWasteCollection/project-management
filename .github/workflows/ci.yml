@@ -38,27 +38,8 @@ jobs:
       - name: Generate Appendix
         run: ./doc/appendix/generate-appendix.sh
         shell: bash
-      - name: Commit Changes
-        if: github.actor == 'SimoneRomagnoli'
-        run: |
-          git config --global user.email "simone.romagnoli10@studio.unibo.it"
-          git config --global user.name "SimoneRomagnoli"
-          git add uml/
-          git commit -m "docs(uml): render plantuml diagrams"
-          git add doc/appendix/appendix.tex
-          git commit -m "docs(tex): generate appendix"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.SR_API_GITHUB_TOKEN }}
-      - name: Commit Changes
-        if: github.actor == 'alessandro-marcantoni'
-        run: |
-          git config --global user.email "alessandr.marcanton2@studio.unibo.it"
-          git config --global user.name "alessandro-marcantoni"
-          git add uml/
-          git commit -m "docs(uml): render plantuml diagrams"
-          git add doc/appendix/appendix.tex
-          git commit -m "docs(tex): generate appendix"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.AM_API_GITHUB_TOKEN }}
+      - name: Push Local Changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          commit_message: "Generate SVG files for PlantUML diagrams"
+          branch: ${{ github.head_ref }}
