@@ -1,4 +1,4 @@
-IMAGE_PATH="uml/$1.png"
+IMAGE_PATH="uml/$1.svg"
 CAPTION=$(cat "doc/appendix/captions/$1.md")
 
 echo "
