@@ -15,14 +15,10 @@ jobs:
     steps:
       - name: Checkout the Repository
         uses: actions/checkout@v2
-      - name: Get changed UML files
-        id: getfile
-        run: |
-          echo "::set-output name=files::$(git diff --name-only HEAD^ HEAD | grep .puml | xargs)"
       - name: Generate SVG Diagrams
         uses: holowinski/plantuml-github-action@main
         with:
-          args: -v -tsvg ${{steps.getfile.outputs.files}}
+          args: -v -tsvg uml/
       - name: Generate Appendix
         run: ./doc/appendix/generate-appendix.sh
         shell: bash
