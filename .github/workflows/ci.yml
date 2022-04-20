@@ -3,8 +3,6 @@ name: Generate Appendix
 on:
   workflow_dispatch:
   push:
-    paths:
-      - "**.puml"
     branches:
       - main
       - develop
