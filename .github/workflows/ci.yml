@@ -18,7 +18,7 @@ jobs:
         with:
           args: -v -tpng uml/
       - name: Generate Appendix
-        run: ./doc/appendix/generate-appendix.sh
+        run: ./.github/scripts/generate-appendix.sh
         shell: bash
       - name: Push Local Changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
