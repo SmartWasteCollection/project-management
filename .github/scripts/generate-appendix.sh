@@ -1,4 +1,4 @@
-echo "\section{Appendice}" > doc/appendix/appendix.tex
+echo "\section*{Appendice}" > doc/appendix/appendix.tex
 
 while read file; do
   ./.github/scripts/insert-image.sh "$file"
