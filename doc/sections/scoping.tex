@@ -1,0 +1,47 @@
+\section{Scoping}
+\label{sec:scoping}
+
+Per svolgere la fase di scoping al meglio, si simula che il progetto Smart Waste Collection venga proposto dal cliente
+\textit{Sphera}. In questo scenario, noi svolgiamo il ruolo di software house e, nello specifico, ricopriamo la posizione di
+\textit{project manager} con diverse esperienze pregresse.
+
+Nei seguenti capitoli, verrà descritta la richiesta del progetto da parte del cliente, per poi effettuarne un'analisi
+rappresentata dal Project Overview Statement; tale documento sarà d'interesse sia per i \textit{senior manager} della
+nostra azienda, sia per quelli dell'azienda cliente.
+
+\subsection{Proposta del Cliente}
+\textit{Sphera} è un'azienda multiutility leader nei servizi ambientali, idrici ed energetici nell'ambito di una regione italiana.
+Negli ultimi due anni ha riscontrato lamentele da parte dei clienti in merito al servizio di smaltimento dei rifiuti.
+In particolare, i cittadini hanno manifestato malcontento a causa dell'inefficienza del servizio stesso e di periodi di
+mancato servizio, in cui non sono stati in grado di conferire i rifiuti. Questo problema è dato dal fatto che i cassonetti
+sono talvolta pieni, tuttavia la raccolta programmata è prevista dopo alcuni giorni. \textit{Sphera} stessa si è inoltre
+accorta che alcune delle raccolte programmate hanno prelevato un quantitativo di rifiuti non sufficiente a giustificare
+la mobilitazione di un camion.
+Inoltre, un altro problema evidenziato dai cittadini consiste nello smaltimento di rifiuti straordinari (ferro, sterpaglie,
+ecc.). Nello specifico, al momento è possibile prenotare una spedizione per la raccolta a casa del cittadino in seguito ad
+una chiamata al numero verde di \textit{Sphera}: le lamentele riguardano principalmente la disponibilità del servizio di
+call-center e i lunghi tempi d'attesa per l'effettivo smaltimento.
+Si richiede quindi un sistema che permetta il monitoraggio dei bidoni stessi indicando così all'azienda il momento più
+opportuno per la raccolta. In particolare, il manager dei servizi ambientali Richie Clato ha proposto di introdurre dei
+nuovi cassonetti con sensori che permettono di misurare il volume e il peso occupati dai rifiuti. Inoltre, tali cassonetti
+possono essere aperti solamente tramite l'utilizzo di una smart card fornita ai cittadini.
+Date queste premesse, Richie ha identificato i seguenti sistemi software che compongono la soluzione:
+\begin{itemize}
+    \item \textbf{Dumpster Infrastructure} - un'infrastruttura che consenta di visualizzare in tempo reale lo stato dei
+    cassonetti sparsi per il territorio. La soluzione deve essere scalabile in quanto deve astrarre dal numero di cassonetti.
+    Deve inoltre mantenere lo storico degli accessi dei cittadini per futuri utilizzi, a partire da indagini statistiche fino
+    a includere premi per i cittadini modello.
+    \item \textbf{Citizen App} - un'applicazione mobile che permetta al cittadino di consultare lo stato dei cassonetti in
+    ciascuna stazione di raccolta per sapere se è possibile conferire un particolare tipo di rifiuto. L'applicazione deve
+    presentare una vista "a mappa della città" per permettere al cittadino di orientarsi. Inoltre, sarebbe opportuno se
+    nella \textit{home} il cittadino potesse vedere lo stato di alcune stazioni preferite.
+    \item \textbf{Trucks Routing} - un'applicazione connessa con la \textbf{Dumpster Infrastructure} che organizza gli
+    itinerari dei camioncini sulla base dello stato dei cassonetti in una determinata zona. Quando un autista parte dalla
+    filiera deve avere l'itinerario pronto e deve raccogliere solamente un tipo di rifiuto.
+    \item \textbf{Extraordinary Waste Booking} - un'applicazione o sito che permetta ai cittadini di prenotare lo
+    smaltimento di rifiuti straordinari a casa: il cittadino deve indicare l'indirizzo di casa propria, il tipo di rifiuto
+    straordinario e i giorni di disponibilità per la raccolta.
+    \item \textbf{Admin Dashboard} - un'applicazione che permetta di visualizzare lo stato di cassonetti e posizione dei
+    camioncini in tempo reale per gli amministratori. Deve inoltre poter visualizzare i dati storici e statistiche relative
+    a conferimenti effettuati da cittadini e prenotazioni per raccolte di rifiuti straordinari.
+\end{itemize}
