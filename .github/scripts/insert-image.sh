@@ -1,6 +1,6 @@
-IMAGE_PATH="uml/$1.png"
+IMAGE_PATH="uml/$1"
 if [[ ! -f "$IMAGE_PATH" ]]; then
-    IMAGE_PATH="uml/$1.pm.png"
+    IMAGE_PATH="uml/$1.pm"
 fi
 CAPTION=$(cat "doc/appendix/captions/$1.md")
 
