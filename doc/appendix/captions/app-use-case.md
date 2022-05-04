@@ -1,1 +1,0 @@
-Diagramma dei casi d'uso della applicazione.

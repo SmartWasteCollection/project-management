@@ -1,0 +1,1 @@
+\textit{Impact map} che, a partire dal \textit{goal}, mostra quali sono le soluzioni con maggiore impatto sugli attori del sistema.
