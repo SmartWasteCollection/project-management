@@ -21,3 +21,18 @@
     \input{#1}
     \newpage
 }
+
+\newcounter{question}
+\setcounter{question}{0}
+\newcommand\question[1]{
+    \leavevmode\par
+    \stepcounter{question}
+    \noindent
+    \thequestion. #1\par
+}
+
+\newcommand\answer[1][]{
+    \leavevmode\par\noindent
+    {\leftskip37pt
+    #1\par}
+}
