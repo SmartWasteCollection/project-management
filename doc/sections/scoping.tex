@@ -38,74 +38,86 @@ Date queste premesse, Richie ha identificato i seguenti sistemi software che com
 Per studiare al meglio il dominio in questione è stato adottato un approccio \textit{Domain Driven}: nello specifico è stata condotta un'intervista con il cliente coinvolgendo tutti i membri del team e, da quest'ultima, è stata effettuata un'analisi per produrre un diagramma di \textit{impact mapping} mostrato in figura \ref{fig:impact-mapping}. Tale diagramma è d'ausilio alla definizione del \textbf{goal} e ad una prima bozza della \textit{Requirement Breakdown Structure}.
 Si riporta di seguito l'intervista con il committente.
 
-\begin{markdown}
-    1. Com'è attualmente gestita la raccolta dei rifiuti?
-    > Al momento i camioncini raccolgono periodicamente i rifiuti dalle stazioni di raccolta. Noi abbiamo una schedula che elenca quali tipi di rifiuto dobbiamo raccogliere in un dato giorno. Ogni camioncino parte dalla filiera di smaltimento e svuota i cassonetti di tutti i punti di raccolta nella sua *mission area*.
-    > Noi vorremmo ottimizzare la raccolta per permettere ai cittadini di conferire i rifiuti in qualsiasi momento presso il punto di raccolta più vicino.
+\question{Com'è attualmente gestita la raccolta dei rifiuti?}
+\answer{Al momento i camioncini raccolgono periodicamente i rifiuti dalle stazioni di raccolta. Noi abbiamo una schedula che elenca quali tipi di rifiuto dobbiamo raccogliere in un dato giorno. Ogni camioncino parte dalla filiera di smaltimento e svuota i cassonetti di tutti i punti di raccolta nella sua \textit{mission area}.
+Noi vorremmo ottimizzare la raccolta per permettere ai cittadini di conferire i rifiuti in qualsiasi momento presso il punto di raccolta più vicino.}
 
-    2. Quanti cassonetti ci sono in ogni punto di raccolta?
-    > In base al numero di persone che vivono nella zona del punto di raccolta, possono esserci uno o più cassonetti per ogni tipo di rifiuto comune. Per esempio, un punto di raccolta può essere composto da due cassonetti della plastica, due della carta e uno per ogni altro tipo.
+\question{Quanti cassonetti ci sono in ogni punto di raccolta?}
+\answer{In base al numero di persone che vivono nella zona del punto di raccolta, possono esserci uno o più cassonetti per ogni tipo di rifiuto comune. Per esempio, un punto di raccolta può essere composto da due cassonetti della plastica, due della carta e uno per ogni altro tipo.}
 
-    3. Quali tipi di cassonetti ci sono in ogni punto di raccolta?
-    > I tipi di rifiuto presenti in ogni punto di raccolta sono *indifferenziata*, *organico*, *plastica/alluminio*, *carta* e *vetro*; tuttavia, stiamo pensando di introdurre altri tipi di rifiuto.
-    > I cassonetti possono avere caratteristiche fisiche diverse, a seconda dal tipo di rifiuto raccolto. Infatti, ci sono due grandezze possibili per i cassonetti: una grande, adatta per rifiuti che non necessitano di essere raccolti con alta frequenza, e una più piccola, che viene usata per i rifiuti organici, ad esempio.
-    > Al momento, i cassonetti più grandi possono essere aperti utilizzando una leva ad altezza dei piedi, mentre quelli più piccoli si aprono manualmente. Tuttavia, vorremmo che i cittadini fossero in grado di aprire tutti i cassonetti utilizzando una *smart card*.
+\question{Quali tipi di cassonetti ci sono in ogni punto di raccolta?}
+\answer{I tipi di rifiuto presenti in ogni punto di raccolta sono indifferenziata, organico, plastica/alluminio, carta e vetro; tuttavia, stiamo pensando di introdurre altri tipi di rifiuto.
+I cassonetti possono avere caratteristiche fisiche diverse, a seconda dal tipo di rifiuto raccolto. Infatti, ci sono due grandezze possibili per i cassonetti: una grande, adatta per rifiuti che non necessitano di essere raccolti con alta frequenza, e una più piccola, che viene usata per i rifiuti organici, ad esempio.
+Al momento, i cassonetti più grandi possono essere aperti utilizzando una leva ad altezza dei piedi, mentre quelli più piccoli si aprono manualmente. Tuttavia, vorremmo che i cittadini fossero in grado di aprire tutti i cassonetti utilizzando una smart card. }
 
-    4. Quali tipi di rifiuto vorreste raccogliere? Come?
-    > Vorremmo prelevare i rifiuti comuni direttamente dai punti di raccolta. D'altro canto, vorremmo fornire un servizio di raccolta "a casa" *on-demand* per i rifiuti straordinari.
-    > I rifiuti comuni includono:
-    > * carta
-    > * plastica/alluminio
-    > * vetro
-    > * indifferenziata
-    > * organico
-    > I rifiuti straordinari includono:
-    > * ramaglie
-    > * olio esausto
-    > * ferro
-    > * elettronica
-    > * vestiti
-    > * altro
+\question{Quali tipi di rifiuto vorreste raccogliere? Come?}
+\answer{Vorremmo prelevare i rifiuti comuni direttamente dai punti di raccolta. D'altro canto, vorremmo fornire un servizio di raccolta "a casa" *on-demand* per i rifiuti straordinari.
+I rifiuti comuni includono:
+\begin{itemize}
+    \item carta
+    \item plastica/alluminio
+    \item vetro
+    \item indifferenziata
+    \item organico
+\end{itemize}
+I rifiuti straordinari includono:
+\begin{itemize}
+    \item ramaglie
+    \item olio esausto
+    \item ferro
+    \item elettronica
+    \item vestiti
+    \item altro
+\end{itemize}
+}
 
-    5. Quali sono le principali caratteristiche dei cassonetti?
-    > Le principali caratteristiche sono:
-    > * grandezza: in termini del volume di rifiuti che può contenere (misura in litri)
-    > * colore: indica il tipo di rifiuto raccolto
-    > * apertura: può essere tramite una leva ad altezza piedi o manuale
+\question{Quali sono le principali caratteristiche dei cassonetti?}
+\answer{Le principali caratteristiche sono:
+\begin{itemize}
+    \item grandezza: in termini del volume di rifiuti che può contenere (misura in litri)
+    \item colore: indica il tipo di rifiuto raccolto
+    \item apertura: può essere tramite una leva ad altezza piedi o manuale
+\end{itemize}
+}
 
-    6. Quali informazioni vorreste tracciare per quanto riguarda un singolo cassonetto?
-    > Per ogni cassonetto vorremmo sapere:
-    > * il volume occupato
-    > * se è aperto o chiuso
-    > * se è funzionante o danneggiato
-    > * se deve essere svuotato
+\question{Quali informazioni vorreste tracciare per quanto riguarda un singolo cassonetto?}
+\answer{Per ogni cassonetto vorremmo sapere:
+\begin{itemize}
+    \item il volume occupato
+    \item se è aperto o chiuso
+    \item se è funzionante o danneggiato
+    \item se deve essere svuotato
+\end{itemize}
+}
 
-    7. Quali tipi di camioncini dei rifiuti avete? Quanti tipi di rifiuti può prelevare un singolo camioncino?
-    > Abbiamo solo un tipo di camioncini. Durante una missione, può raccogliere solo un singolo tipo di rifiuto.
-    > Stiamo anche pianificando di acquisire camioncini specifici per i rifiuti straordinari per soddisfare le richieste dei clienti.
+\question{Quali tipi di camioncini dei rifiuti avete? Quanti tipi di rifiuti può prelevare un singolo camioncino?}
+\answer{Abbiamo solo un tipo di camioncini. Durante una missione, può raccogliere solo un singolo tipo di rifiuto.
+Stiamo anche pianificando di acquisire camioncini specifici per i rifiuti straordinari per soddisfare le richieste dei clienti.}
 
-    8. Quanti camioncini dei rifiuti avete?
-    > Ce ne sono circa da 10 a 30 parcheggiati in ogni filiera di smaltimento. L'ammontare preciso dipende dal numero di punti di raccolta nella provincia della filiera.
+\question{Quanti camioncini dei rifiuti avete?}
+\answer{Ce ne sono circa da 10 a 30 parcheggiati in ogni filiera di smaltimento. L'ammontare preciso dipende dal numero di punti di raccolta nella provincia della filiera.}
 
-    9. Quali informazioni vorreste tracciare per quanto riguarda un singolo camioncino dei rifiuti?
-    > Vorremmo tracciare:
-    > * il volume totale
-    > * il volume attualmente occupato
-    > * il tipo di rifiuto che si sta raccogliendo al momento
-    > * la sua posizione in tempo reale
+\question{Quali informazioni vorreste tracciare per quanto riguarda un singolo camioncino dei rifiuti?}
+\answer{Vorremmo tracciare:
+\begin{itemize}
+    \item il volume totale
+    \item il volume attualmente occupato
+    \item il tipo di rifiuto che si sta raccogliendo al momento
+    \item la sua posizione in tempo reale
+\end{itemize}
+}
 
-    10. Dove vengono portati i rifiuti dai camioncini?
-    > I rifiuti vengono portati nella filiera di smaltimento della provincia.
+\question{Dove vengono portati i rifiuti dai camioncini?}
+\answer{I rifiuti vengono portati nella filiera di smaltimento della provincia.}
 
-    11. Quindi i camioncini raccolgono rifiuti da ogni punto di raccolta della provincia?
-    > No. A ogni camioncino viene assegnata una missione e, di conseguenza, una *mission area*. Una *mission area* è composta da un insieme di aree residenziale che sono fisicamente vicine tra loro.
+\question{Quindi i camioncini raccolgono rifiuti da ogni punto di raccolta della provincia?}
+\answer{No. A ogni camioncino viene assegnata una missione e, di conseguenza, una *mission area*. Una *mission area* è composta da un insieme di aree residenziale che sono fisicamente vicine tra loro.}
 
-    12. Come sono distribuiti i punt di raccolta nel territorio?
-    > C'è una filiera di smaltimento per ogni provincia. Ogni filiera è responsabile dei rifiuti prelevati dai punti di raccolta della propria provincia. Una provincia è suddivisa in aree residenziali dove è collocato un singolo punto di raccolta. Le aree residenziali sono dimensionate in modo da "coprire" più o meno lo stesso numero di persone.
+\question{Come sono distribuiti i punt di raccolta nel territorio?}
+\answer{C'è una filiera di smaltimento per ogni provincia. Ogni filiera è responsabile dei rifiuti prelevati dai punti di raccolta della propria provincia. Una provincia è suddivisa in aree residenziali dove è collocato un singolo punto di raccolta. Le aree residenziali sono dimensionate in modo da "coprire" più o meno lo stesso numero di persone.}
 
-    13. Quali tipi di rifiuto vengono gestiti in una filiera di smaltimento?
-    > Ogni filiera gestisce tutti i tipi di rifiuti. Ciascun tipo di rifiuto viene smaltito da un'apposita catena di smaltimento all'interno della filiera.
+\question{Quali tipi di rifiuto vengono gestiti in una filiera di smaltimento?}
+\answer{Ogni filiera gestisce tutti i tipi di rifiuti. Ciascun tipo di rifiuto viene smaltito da un'apposita catena di smaltimento all'interno della filiera.}
 
-    14. Come volete gestire i rifiuti straordinari?
-    > Al momento, i rifiuti straordinari vengono portati direttamente alle filiere dai cittadini. Tuttavia, vorremmo che i cittadini siano in grado di prenotare un appuntamento per raccogliere i rifiuti straordinari direttamente a casa loro.
-\end{markdown}
+\question{Come volete gestire i rifiuti straordinari?}
+\answer{Al momento, i rifiuti straordinari vengono portati direttamente alle filiere dai cittadini. Tuttavia, vorremmo che i cittadini siano in grado di prenotare un appuntamento per raccogliere i rifiuti straordinari direttamente a casa loro.}
