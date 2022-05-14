@@ -34,8 +34,10 @@ Date queste premesse, Richie ha identificato i seguenti sistemi software che com
     Deve inoltre poter visualizzare i dati storici e statistiche relative a conferimenti effettuati da cittadini e prenotazioni per raccolte di rifiuti straordinari.
 \end{itemize}
 
-\subsection{Knowledge Crunching}
-Per studiare al meglio il dominio in questione è stato adottato un approccio \textit{Domain Driven}: nello specifico è stata condotta un'intervista con il cliente coinvolgendo tutti i membri del team e, da quest'ultima, è stata effettuata un'analisi per produrre un diagramma di \textit{impact mapping} mostrato in figura \ref{fig:impact-mapping}. Tale diagramma è d'ausilio alla definizione del \textbf{goal} e ad una prima bozza della \textit{Requirement Breakdown Structure}.
+\subsection{Analisi del Dominio}
+Per studiare al meglio il dominio in questione è stato adottato un approccio \textit{Domain Driven}: nello specifico è stata condotta un'intervista con il cliente coinvolgendo tutti i membri del team. In seguito, è stata condotta un'analisi che ha trasformato i desideri del cliente in delle \textit{user stories}. A partire da quest'ultime, è stato prodotto un diagramma di \textit{impact mapping}: tale diagramma è d'ausilio alla definizione del \textbf{goal} e ad una prima bozza della \textit{Requirement Breakdown Structure}.
+
+\subsubsection{Intervista col Committente}
 Si riporta di seguito l'intervista con il committente.
 
 \question{Com'è attualmente gestita la raccolta dei rifiuti?}
@@ -121,3 +123,56 @@ Stiamo anche pianificando di acquisire camioncini specifici per i rifiuti straor
 
 \question{Come volete gestire i rifiuti straordinari?}
 \answer{Al momento, i rifiuti straordinari vengono portati direttamente alle filiere dai cittadini. Tuttavia, vorremmo che i cittadini siano in grado di prenotare un appuntamento per raccogliere i rifiuti straordinari direttamente a casa loro.}
+
+\subsubsection{User Stories}
+Dall'intervista col cliente sono scaturiti quelli che saranno i 3 attori principali nel sistema da realizzare: i manager dell'azienda cliente, i cittadini e gli autisti dei camion dei rifiuti. Le \textit{user stories} prodotte (elencate di seguito) sono state quindi realizzate concentrandosi su questi attori.
+
+\storyactor{Manager}
+\begin{story}
+    ... \textit{I want to} observe the real-time position of garbage trucks and the type of waste they are carrying \textit{so that} I can monitor active missions.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe the list of complaints received from citizens and dumpsters \textit{so that} I can fix possible issues.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe collection points and dumpsters' status \textit{so that} I can check whether the system is working or not.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe disposal points' position \textit{so that} I can have a visual representation of their location.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe the list of "at home" collection requests \textit{so that} I can verify the usefulness of the service.
+\end{story}
+\begin{story}
+    ... \textit{I want to} create a new smart card for specific citizens \textit{so that} they can open dumpsters with it.
+\end{story}
+
+\storyactor{Citizen}
+\begin{story}
+    ... \textit{I want to} open dumpsters with my smart card \textit{so that} I can dispose waste effortlessly and without touching the dumpster.
+\end{story}
+\begin{story}
+    ... \textit{I want to} book an "at home" waste collection \textit{so that} I don't have to go to the disposal point.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe all collection points \textit{so that} I can see the types of waste that I can dispose of, the percentage of occupied volume for every dumpster and whether they are available or not.
+\end{story}
+\begin{story}
+    ... \textit{I want to} report issues \textit{so that} I can help improve the service.
+\end{story}
+
+\storyactor{Truck Driver}
+\begin{story}
+    ... \textit{I want to} automatically receive missions \textit{so that} I can know which disposal points and which type of waste to collect.
+\end{story}
+\begin{story}
+    ... \textit{I want to} automatically receive "at home" missions \textit{so that} I can know which extraordinary waste collection requests I have to satisfy.
+\end{story}
+\begin{story}
+    ... \textit{I want to} report issues \textit{so that} I can notify managers about possible problems.
+\end{story}
+
+
+
+\subsubsection{Impact Mapping}
+Il diagramma di \textit{impact mapping} realizzato (\ref{fig:impact-mapping}) aiuta ad individuare una prima versione del \textbf{goal}. Inoltre, permette di specificare quali sono gli attori del dominio studiato e, per ognuno di questi, quali sono le variazioni di maggiore impatto introdotte dal progetto. In questo modo si riescono a dedurre delle idee per eventuali \textit{deliverable} da proporre nel \textit{Project Overview Statement}. Infine, il diagramma di \textit{impact mapping} può fungere da spunto per la \textit{Requirement Breakdown Structure}.
