@@ -8,6 +8,15 @@
 \graphicspath{{./../}}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\newtcolorbox{story}[1][]{%
+    sharp corners,
+    enhanced,
+    colback=white,
+    attach title to upper,
+    #1
+}
+\newcommand{\storyactor}[1]{\vspace{20 pt} \textit{As a} \textbf{#1}... \vspace{5 pt}}
 \usepackage{color}
 \usepackage{xcolor}
 \usepackage{multirow, hhline}
