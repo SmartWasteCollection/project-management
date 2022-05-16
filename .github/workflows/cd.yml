@@ -25,9 +25,23 @@ jobs:
       - name: Push Local Changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
         with:
+          file_pattern: assets/*
           commit_message: "cd(assets): generate assets"
           branch: ${{ github.head_ref }}
       - name: Apply Semantic Versioning
         uses: anitvam/conventionalcommit-semantic-releasing@main
         with:
           token: ${{ secrets.SR_API_TOKEN_GITHUB }}
+
+  delete-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v2
+      - name: Delete Assets
+        run: rm -rf assets
+      - name: Push Local Changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          commit_message: "cd(assets): remove assets"
+          branch: ${{ github.head_ref }}
