@@ -23,5 +23,5 @@ jobs:
       - name: Push Local Changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
         with:
-          commit_message: "Generate PNG files for PlantUML diagrams"
+          commit_message: "docs(uml): generate PNG files for PlantUML diagrams"
           branch: ${{ github.head_ref }}
