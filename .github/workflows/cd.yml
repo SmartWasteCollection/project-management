@@ -39,7 +39,9 @@ jobs:
       - name: Checkout the Repository
         uses: actions/checkout@v2
       - name: Delete Assets
-        run: rm -rf assets
+        run: |
+          git pull
+          rm -rf assets
       - name: Push Local Changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
         with:
