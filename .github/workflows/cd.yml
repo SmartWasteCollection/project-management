@@ -34,6 +34,7 @@ jobs:
           token: ${{ secrets.SR_API_TOKEN_GITHUB }}
 
   delete-assets:
+    needs: compile-and-release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the Repository
