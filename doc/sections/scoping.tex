@@ -176,14 +176,8 @@ Dall'intervista col cliente sono scaturiti quelli che saranno i 3 attori princip
 \subsubsection{Impact Mapping}
 Il diagramma di \textit{impact mapping} realizzato (\ref{fig:impact-mapping}) aiuta ad individuare una prima versione del \textbf{goal}. Inoltre, permette di specificare quali sono gli attori del dominio studiato e, per ognuno di questi, quali sono le variazioni di maggiore impatto introdotte dal progetto. In questo modo si riescono a dedurre delle idee per eventuali \textit{deliverable} da proporre nel \textit{Project Overview Statement}. Infine, il diagramma di \textit{impact mapping} può fungere da spunto per la \textit{Requirement Breakdown Structure}.
 
-\newpage
 \subsection{Project Overview Statement}
-In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overview Statement} per ricevere l'approvazione da parte del \textit{senior management} a procedere con il progetto. Il \textit{POS} prodotto prevede le seguenti sottosezioni:
-
-\subsubsection*{Problem/Opportunity}
-Il servizio di smaltimento dei rifiuti dell'azienda \textit{Sphera} è inefficiente: talvolta i cassonetti sono pieni, pertanto i cittadini non riescono a conferire i propri rifiuti, e la raccolta programmata avverrà solo alcuni giorni dopo.
-Inoltre, la clientela è fortemente insoddisfatta del metodo di raccolta dei rifiuti straordinari che al momento prevede una prenotazione al numero verde per potersi successivamente recare di persona al punto di smaltimento.
-L'azienda potrebbe infine sfruttare l'ottimizzazione della raccolta dei rifiuti per minimizzare le missioni di raccolta che prelevano un quantitativo di rifiuti non abbastanza elevato: \textit{Sphera} stessa ha infatti rilevato che alcune raccolte programmate hanno prelevato un quantitativo di rifiuti non sufficiente a giustificare la missione di raccolta.
+In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overview Statement} per ricevere l'approvazione da parte del \textit{senior management} a procedere con il progetto. Il \textit{POS} prodotto è qui riportato:
 
 \newpage
 \begin{tabular}{| p{.25\textwidth} | p{.3\textwidth} | p{.30\textwidth} | }
@@ -208,9 +202,19 @@ L'azienda potrebbe infine sfruttare l'ottimizzazione della raccolta dei rifiuti 
 \possec{Obiettivi}{
     Si vogliono realizzare i seguenti sottosistemi:
     \begin{itemize}
-        \item \textbf{Dumpster Infrastructure}:
-        \item \textbf{Citizen App}:
-        \item \textbf{Trucks Routing}:
-        \item \textbf{Admin Dashboard}:
+        \item \textbf{Dumpster Infrastructure}: dotare i cassonetti di sensori e attuatori in grado di:
+        \begin{itemize}
+            \item monitorare il volume occupato;
+            \item aprire il cassonetto all'avvicinamento di una smart card;
+            \item memorizzare/condividere i dati raccolti.
+        \end{itemize}
+        \item \textbf{Citizen App}: applicazione mobile che permetta al cittadino di:
+        \begin{itemize}
+            \item consultare lo stato di riempimento dei cassonetti nei punti di raccolta;
+            \item prenotare un appuntamento per smaltimento di rifiuti straordinari;
+            \item segnalare eventuali problemi/reclami.
+        \end{itemize}
+        \item \textbf{Trucks Routing}: sistema reattivo che organizza missioni di raccolta rifiuti (ordinari e straordinari) .
+        \item \textbf{Admin Dashboard}: piattaforma che consente ai manager di visualizzare informazioni relative ai cassonetti, posizione dei camioncini in tempo reale, lista dei reclami e altri dati storici.
     \end{itemize}
 }
