@@ -8,7 +8,7 @@ on:
       - develop
 
 jobs:
-  generate-plantuml-images:
+  compile-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the Repository
@@ -28,6 +28,6 @@ jobs:
           commit_message: "cd(assets): generate assets"
           branch: ${{ github.head_ref }}
       - name: Apply Semantic Versioning
-        uses: anitvam/conventionalcommmit-semantic-releasing@main
+        uses: anitvam/conventionalcommit-semantic-releasing@main
         with:
           token: ${{ secrets.SR_API_TOKEN_GITHUB }}
