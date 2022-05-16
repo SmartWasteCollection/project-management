@@ -1,0 +1,32 @@
+name: Compile and Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-plantuml-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v2
+      - name: Build LaTex
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: doc
+          root_file: main.tex
+      - name: Prepare assets
+        runs: |
+        mkdir assets
+        mv doc/main.pdf assets/
+      - name: Push Local Changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          commit_message: "cd(assets): generate assets"
+          branch: ${{ github.head_ref }}
+      - name: Apply Semantic Versioning
+        uses: anitvam/conventionalcommmit-semantic-releasing@main
+        with:
+          token: ${{ secrets.SR_API_TOKEN_GITHUB }}
