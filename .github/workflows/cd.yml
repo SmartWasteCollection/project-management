@@ -19,7 +19,7 @@ jobs:
           working_directory: doc
           root_file: main.tex
       - name: Prepare assets
-        runs: |
+        run: |
           mkdir assets
           mv doc/main.pdf assets/
       - name: Push Local Changes
