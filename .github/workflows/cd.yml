@@ -20,8 +20,8 @@ jobs:
           root_file: main.tex
       - name: Prepare assets
         runs: |
-        mkdir assets
-        mv doc/main.pdf assets/
+          mkdir assets
+          mv doc/main.pdf assets/
       - name: Push Local Changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
         with:
