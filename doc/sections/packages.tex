@@ -3,6 +3,7 @@
 \renewcommand{\contentsname}{Indice}
 \linespread{1.2}
 \usepackage{geometry}
+\usepackage{quoting}
 \geometry{a4paper}
 \usepackage{graphicx}
 \graphicspath{{./../}}
@@ -31,20 +32,9 @@
     \newpage
 }
 
-\newcounter{question}
-\setcounter{question}{0}
-\newcommand\question[1]{
-    \leavevmode\par
-    \stepcounter{question}
-    \noindent
-    \thequestion. #1\par
-}
+\newcommand\question[2]{\noindent#1. #2}
 
-\newcommand\answer[1][]{
-    \leavevmode\par\noindent
-    {\leftskip37pt
-    #1\par}
-}
+\newcommand\answer[1]{\begin{quoting}#1\end{quoting}}
 
 \newcommand{\possec}[2]{
     \vspace{-1pt}
