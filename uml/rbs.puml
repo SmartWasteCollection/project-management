@@ -1,0 +1,44 @@
+@startwbs
+!include ../metamodels/requirement-breakdown.iuml
+
+goal("Optimize Waste Collection")
+
+'Dumpster Infrastructure
+function("Dumpster Infrastructure")
+subfunction("Monitor Dumpsters Volume")
+
+subfunction("Open Dumpsters")
+
+subfunction("Share Data")
+
+'Citizen App
+function("Citizen App")
+subfunction("Consult Dumpsters'\nVolume Status")
+
+subfunction("Book Extraordinary\nWaste Disposal Missions")
+
+subfunction("Notify Issues")
+
+'Trucks Routing
+function("Trucks Routing")
+subfunction("Plan Ordinary Waste\nDisposal Missions")
+
+subfunction("Plan Extraordinary Waste\nDisposal Missions")
+
+subfunction("Organize Missions' Route")
+
+'Admin Dashboard
+function("Admin Dashboard")
+subfunction("Display Collection\nPoints' Status")
+
+subfunction("Display Trucks'\nReal-time Position")
+
+subfunction("Display Complaints")
+
+legend left
+    Blue = Goal
+    Green = Functions
+    Yellow = Sub-functions
+    Red = Features
+endlegend
+@endwbs
