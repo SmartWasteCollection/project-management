@@ -1,0 +1,38 @@
+@startuml Requirement Breakdown Structure
+<style>
+wbsDiagram {
+    .goals .functions .subfunctions .features {
+        LineColor #000000
+        RoundCorner 10
+        Shadowing 0.0
+    }
+    .goals {
+        BackgroundColor #4D96FF
+    }
+    .functions {
+        BackgroundColor #6BCB77
+    }
+    .subfunctions {
+        BackgroundColor #FFD93D
+    }
+    .features {
+        BackgroundColor #FF6B6B
+    }
+}
+</style>
+!procedure goal($name)
+* $name <<goals>>
+!endprocedure
+'
+!procedure function($name)
+** $name <<functions>>
+!endprocedure
+'
+!procedure subfunction($name)
+*** $name <<subfunctions>>
+!endprocedure
+'
+!procedure feature($name)
+**** $name <<features>>
+!endprocedure
+@enduml
