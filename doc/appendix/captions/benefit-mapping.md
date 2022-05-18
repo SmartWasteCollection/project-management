@@ -1,0 +1,1 @@
+\textit{Impact map} che, a partire dal \textit{goal}, mostra chi sono gli attori che beneficiano maggiormente dai cambiamenti introdotti dal sistema.
