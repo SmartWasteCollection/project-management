@@ -1,39 +1,57 @@
 @startwbs
 !include ../metamodels/requirement-breakdown.iuml
 
-goal("Optimize Waste Collection")
+goal(Optimize Waste Collection)
 
 'Dumpster Infrastructure
-requirement("Dumpster infrastructure")
-function("Monitor dumpsters volume")
+requirement(Dumpster infrastructure)
 
-function("Open dumpsters\nwith smart-cards")
+function(Open dumpsters\nwith smart-cards)
+feature(Deploy smart-cards)
+feature(Dumpster read\nfrom the database)
 
-function("Collect and share data")
+function(Collect and share data)
+feature(Update occupied volume\non database)
+feature(Collect citizens' disposals)
+feature(Save citizens' disposals\non the database)
 
 'Citizen App
-requirement("Citizen app")
-function("Consult dumpsters'\nvolume status")
+requirement(Citizen app)
+function(Consult dumpsters'\nvolume status)
+feature(Read dumpster's occupied\nvolume from database)
+feature(Display dumpsters with\ntheir volume on interface)
 
-function("Book extraordinary\nwaste disposal missions")
+function(Book extraordinary\nwaste disposal missions)
+feature(Create waste\ndisposal request)
 
-function("Notify issues")
+function(Notify issues)
+feature(Write issue\non database)
 
 'Trucks Routing
-requirement("Trucks routing")
-function("Plan ordinary waste\ndisposal missions")
+requirement(Trucks routing)
+function(Plan ordinary waste\ndisposal missions)
+feature(Trigger event when\na dumpster is full)
+feature(Calculate half-full dumpsters\nnear the full one)
+feature(Calculate best route)
 
-function("Plan extraordinary waste\ndisposal missions")
-
-function("Organize missions' route")
+function(Plan extraordinary waste\ndisposal missions)
+feature(Group missions\nby type of waste)
+feature(Calculate best route)
 
 'Admin Dashboard
-requirement("Admin dashboard")
-function("Display collection\npoints' status")
+requirement(Admin dashboard)
+function(Display collection\npoints' status)
+feature(Read dumpsters' occupied\nvolume from database)
 
-function("Display trucks'\nreal-time position")
+function(Display trucks'\nreal-time position)
+feature(Update real-time trucks'\nposition on database)
+feature(Read real-time trucks'\nposition on database)
 
-function("Display complaints")
+function(Display complaints)
+feature(Read list of complaints\nfrom database)
+
+function(Register new citizens\nwith a smart-card)
+feature(Write new citizen\non database)
 
 legend left
     Blue = Goal
