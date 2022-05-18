@@ -20,19 +20,19 @@ wbsDiagram {
     }
 }
 </style>
-!procedure goal($name)
+!unquoted procedure goal($name)
 * $name <<goals>>
 !endprocedure
 '
-!procedure requirement($name)
+!unquoted procedure requirement($name)
 ** $name <<requirements>>
 !endprocedure
 '
-!procedure function($name)
+!unquoted procedure function($name)
 *** $name <<functions>>
 !endprocedure
 '
-!procedure feature($name)
+!unquoted procedure feature($name)
 **** $name <<features>>
 !endprocedure
 @enduml
