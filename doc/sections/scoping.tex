@@ -54,7 +54,7 @@ I cassonetti possono avere caratteristiche fisiche diverse, a seconda dal tipo d
 Al momento, i cassonetti più grandi possono essere aperti utilizzando una leva ad altezza dei piedi, mentre quelli più piccoli si aprono manualmente. Tuttavia, vorremmo che i cittadini fossero in grado di aprire tutti i cassonetti utilizzando una smart card. }
 
 \question{4}{Quali tipi di rifiuto vorreste raccogliere? Come?}
-\answer{Vorremmo prelevare i rifiuti comuni direttamente dai punti di raccolta. D'altro canto, vorremmo fornire un servizio di raccolta "a casa" *on-demand* per i rifiuti straordinari.
+\answer{Vorremmo prelevare i rifiuti comuni direttamente dai punti di raccolta. D'altro canto, vorremmo fornire un servizio di raccolta "a casa" \textit{on-demand} per i rifiuti straordinari.
 I rifiuti comuni includono:
 \begin{itemize}
     \item carta
@@ -114,7 +114,7 @@ Stiamo anche pianificando di acquisire camioncini specifici per i rifiuti straor
 \answer{I rifiuti vengono portati nella filiera di smaltimento della provincia.}
 
 \question{11}{Quindi i camioncini raccolgono rifiuti da ogni punto di raccolta della provincia?}
-\answer{No. A ogni camioncino viene assegnata una missione e, di conseguenza, una *mission area*. Una *mission area* è composta da un insieme di aree residenziale che sono fisicamente vicine tra loro.}
+\answer{No. A ogni camioncino viene assegnata una missione e, di conseguenza, una \textit{mission area}. Una \textit{mission area} è composta da un insieme di aree residenziale che sono fisicamente vicine tra loro.}
 
 \question{12}{Come sono distribuiti i punt di raccolta nel territorio?}
 \answer{C'è una filiera di smaltimento per ogni provincia. Ogni filiera è responsabile dei rifiuti prelevati dai punti di raccolta della propria provincia. Una provincia è suddivisa in aree residenziali dove è collocato un singolo punto di raccolta. Le aree residenziali sono dimensionate in modo da "coprire" più o meno lo stesso numero di persone.}
@@ -125,6 +125,7 @@ Stiamo anche pianificando di acquisire camioncini specifici per i rifiuti straor
 \question{14}{Come volete gestire i rifiuti straordinari?}
 \answer{Al momento, i rifiuti straordinari vengono portati direttamente alle filiere dai cittadini. Tuttavia, vorremmo che i cittadini siano in grado di prenotare un appuntamento per raccogliere i rifiuti straordinari direttamente a casa loro.}
 
+\subsection{Requisiti}
 \subsubsection{User Stories}
 Dall'intervista col cliente sono scaturiti quelli che saranno i 3 attori principali nel sistema da realizzare: i manager dell'azienda cliente, i cittadini e gli autisti dei camion dei rifiuti. Le \textit{user stories} prodotte (elencate di seguito) sono state quindi realizzate concentrandosi su questi attori.
 
@@ -172,6 +173,16 @@ Dall'intervista col cliente sono scaturiti quelli che saranno i 3 attori princip
 \begin{story}
     ... \textit{I want to} report issues \textit{so that} I can notify managers about possible problems.
 \end{story}
+
+\subsubsection{Casi d'Uso}
+Sulla base delle user stories individuate, sono stati prodotti dei diagrammi dei casi d'uso per meglio formalizzare i requisiti. In particolare, sono stati analizzati gli scenari:
+\begin{itemize}
+    \item \textbf{Ordinary waste disposal} (\ref{fig:ordinary-disposal-use-cases}): lo scenario in cui il cittadino si reca presso il \textit{collection point} per conferire i propri rifiuti; gli attori coinvolti in tale caso d'uso sono il cittadino e il camioncino dei rifiuti.
+    \item \textbf{Ordinary waste collection} (\ref{fig:ordinary-collection-use-cases}): il processo che prevede la missione di raccolta dei rifiuti all'interno dei cassonetti da parte dei camioncini.
+    \item \textbf{Extraordinary waste management} (\ref{fig:extraordinary-management-use-cases}): la gestione dei rifiuti straordinari mediante raccolta a casa dei cittadini da parte dei camioncini.
+    \item \textbf{Dashboard} (\ref{fig:dashboard-use-cases}): l'utilizzo della dashboard da parte dei manager e della \textbf{Citizen App} da parte dei cittadini.
+    \item \textbf{Complaints} (\ref{fig:complaints-use-cases}): la presentazione di reclami da parte di cittadini, autisti dei camioncini e cassonetti e successiva visualizzazione da parte dei manager.
+\end{itemize}
 
 \subsubsection{Impact Mapping}
 Il diagramma di \textit{impact mapping} realizzato (\ref{fig:impact-mapping}) aiuta ad individuare una prima versione del \textbf{goal}. Inoltre, permette di specificare quali sono gli attori del dominio studiato e, per ognuno di questi, quali sono le variazioni di maggiore impatto introdotte dal progetto. In questo modo si riescono a dedurre delle idee per eventuali \textit{deliverable} da proporre nel \textit{Project Overview Statement}. Infine, il diagramma di \textit{impact mapping} può fungere da spunto per la \textit{Requirement Breakdown Structure}.
