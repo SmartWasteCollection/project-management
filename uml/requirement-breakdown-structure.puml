@@ -4,41 +4,41 @@
 goal("Optimize Waste Collection")
 
 'Dumpster Infrastructure
-function("Dumpster Infrastructure")
-subfunction("Monitor Dumpsters Volume")
+requirement("Dumpster infrastructure")
+function("Monitor dumpsters volume")
 
-subfunction("Open Dumpsters")
+function("Open dumpsters\nwith smart-cards")
 
-subfunction("Share Data")
+function("Collect and share data")
 
 'Citizen App
-function("Citizen App")
-subfunction("Consult Dumpsters'\nVolume Status")
+requirement("Citizen app")
+function("Consult dumpsters'\nvolume status")
 
-subfunction("Book Extraordinary\nWaste Disposal Missions")
+function("Book extraordinary\nwaste disposal missions")
 
-subfunction("Notify Issues")
+function("Notify issues")
 
 'Trucks Routing
-function("Trucks Routing")
-subfunction("Plan Ordinary Waste\nDisposal Missions")
+requirement("Trucks routing")
+function("Plan ordinary waste\ndisposal missions")
 
-subfunction("Plan Extraordinary Waste\nDisposal Missions")
+function("Plan extraordinary waste\ndisposal missions")
 
-subfunction("Organize Missions' Route")
+function("Organize missions' route")
 
 'Admin Dashboard
-function("Admin Dashboard")
-subfunction("Display Collection\nPoints' Status")
+requirement("Admin dashboard")
+function("Display collection\npoints' status")
 
-subfunction("Display Trucks'\nReal-time Position")
+function("Display trucks'\nreal-time position")
 
-subfunction("Display Complaints")
+function("Display complaints")
 
 legend left
     Blue = Goal
-    Green = Functions
-    Yellow = Sub-functions
+    Green = Requirements
+    Yellow = Functions
     Red = Features
 endlegend
 @endwbs
