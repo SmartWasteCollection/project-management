@@ -192,78 +192,83 @@ Sulla base delle user stories individuate, sono stati prodotti dei diagrammi dei
 \subsubsection{Requirement Breakdown Strucuture}
 Una volta analizzati i casi d'uso e le \textit{user stories}, è stato prodotto un diagramma di \textit{Requirement Breakdown Structure} \ref{fig:requirement-breakdown-structure}. Questo permette di descrivere ogni requisito in termini delle funzionalità che questo introduce.
 
-\begin{enumerate}
-    \item \textbf{Dumpster Infrastructure}
+Il \textbf{goal} che accomuna i requisti è l'ottimizzazione della raccolta dei rifiuti. I requisiti che ne scaturiscono coincidono con gli elementi di primo livello; vi sono poi le funzioni di ciascuno, che spiegano quali sono le funzionalità di più alto livello di ciascun requisito. Le funzioni si suddividono ulteriormente in delle feature più specifiche.
+
+\begin{itemize}
+    \item \textbf{Ottimizzazione della raccolta dei rifiuti}
     \begin{enumerate}[label*=\arabic*.]
-        \item Apertura dei cassonetti con smart-cards
+        \item \textbf{Dumpster Infrastructure}
         \begin{enumerate}[label*=\arabic*.]
-            \item Autenticazione delle smart-card
-            \item Apertura e chiusura di cassonetti
+            \item Apertura dei cassonetti con smart-cards
+            \begin{enumerate}[label*=\arabic*.]
+                \item Autenticazione delle smart-card
+                \item Apertura e chiusura di cassonetti
+            \end{enumerate}
+            \item Raccolta e condivisione dati
+            \begin{enumerate}[label*=\arabic*.]
+                \item Aggiornamento del volume occupato
+                \item Salvataggio di informazioni sul conferimento dei cittadini
+                \item Segnalazione problemi
+            \end{enumerate}
         \end{enumerate}
-        \item Raccolta e condivisione dati
+        \item \textbf{Citizen App}
         \begin{enumerate}[label*=\arabic*.]
-            \item Aggiornamento del volume occupato
-            \item Salvataggio di informazioni sul conferimento dei cittadini
+            \item Verifica dello stato dei cassonetti
+            \begin{enumerate}[label*=\arabic*.]
+                \item Interfaccia grafica con cassonetti
+                \item Verifica della disponibilità dei cassonetti
+                \item Verifica del volume occupato dei cassonetti
+            \end{enumerate}
+            \item Prenotazione di smaltimento di rifiuti straordinari
+            \begin{enumerate}[label*=\arabic*.]
+                \item Creazione di una richiesta di smaltimento di rifiuti straordinari
+            \end{enumerate}
             \item Segnalazione problemi
+            \begin{enumerate}[label*=\arabic*.]
+                \item Scrivere una lamentela
+                \item Inviare lamentele
+            \end{enumerate}
+        \end{enumerate}
+        \item \textbf{Trucks Routing}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Pianificare missioni di smaltimento di rifiuti ordinari
+            \begin{enumerate}[label*=\arabic*.]
+                \item Inviare notifica di "cassonetto pieno"
+                \item Ricerca di altri cassonetti "quasi pieni" nei dintorni
+                \item Calcolo del percorso migliore
+                \item Tracciamento della posizione in tempo reale dei camioncini
+            \end{enumerate}
+            \item Pianificare missioni di smaltimento di rifiuti straordinari
+            \begin{enumerate}[label*=\arabic*.]
+                \item Notifica di richiesta di smaltimento di rifiuti straordinari
+                \item Raggruppamento di missioni per tipo di rifiuto straordinario
+                \item Calcolo del percorso migliore
+                \item Tracciamento della posizione in tempo reale dei camioncini
+            \end{enumerate}
+        \end{enumerate}
+        \item \textbf{Admin Dashboard}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Mostrare lo stato dei punti di raccolta
+            \begin{enumerate}[label*=\arabic*.]
+                \item Mostrare la disponibilità dei cassonetti
+                \item Mostrare il volume occupato dei cassonetti
+            \end{enumerate}
+            \item Mostrare lo stato in tempo reale dei camioncini
+            \begin{enumerate}[label*=\arabic*.]
+                \item Mostrare la posizione dei camioncini
+                \item Mostrare il volume occupato dei camioncini
+            \end{enumerate}
+            \item Mostrare le segnalazioni
+            \begin{enumerate}[label*=\arabic*.]
+                \item Mostrare la lista di segnalazioni
+            \end{enumerate}
+            \item Registrazione di nuovi cittadini
+            \begin{enumerate}[label*=\arabic*.]
+                \item Creazione di nuove smart-card per i cittadini
+            \end{enumerate}
         \end{enumerate}
     \end{enumerate}
-    \item \textbf{Citizen App}
-    \begin{enumerate}[label*=\arabic*.]
-        \item Verifica dello stato dei cassonetti
-        \begin{enumerate}[label*=\arabic*.]
-            \item Interfaccia grafica con cassonetti
-            \item Verifica della disponibilità dei cassonetti
-            \item Verifica del volume occupato dei cassonetti
-        \end{enumerate}
-        \item Prenotazione di smaltimento di rifiuti straordinari
-        \begin{enumerate}[label*=\arabic*.]
-            \item Creazione di una richiesta di smaltimento di rifiuti straordinari
-        \end{enumerate}
-        \item Segnalazione problemi
-        \begin{enumerate}[label*=\arabic*.]
-            \item Scrivere una lamentela
-            \item Inviare lamentele
-        \end{enumerate}
-    \end{enumerate}
-    \item \textbf{Trucks Routing}
-    \begin{enumerate}[label*=\arabic*.]
-        \item Pianificare missioni di smaltimento di rifiuti ordinari
-        \begin{enumerate}[label*=\arabic*.]
-            \item Inviare notifica di "cassonetto pieno"
-            \item Ricerca di altri cassonetti "quasi pieni" nei dintorni
-            \item Calcolo del percorso migliore
-            \item Tracciamento della posizione in tempo reale dei camioncini
-        \end{enumerate}
-        \item Pianificare missioni di smaltimento di rifiuti straordinari
-        \begin{enumerate}[label*=\arabic*.]
-            \item Notifica di richiesta di smaltimento di rifiuti straordinari
-            \item Raggruppamento di missioni per tipo di rifiuto straordinario
-            \item Calcolo del percorso migliore
-            \item Tracciamento della posizione in tempo reale dei camioncini
-        \end{enumerate}
-    \end{enumerate}
-    \item \textbf{Admin Dashboard}
-    \begin{enumerate}[label*=\arabic*.]
-        \item Mostrare lo stato dei punti di raccolta
-        \begin{enumerate}[label*=\arabic*.]
-            \item Mostrare la disponibilità dei cassonetti
-            \item Mostrare il volume occupato dei cassonetti
-        \end{enumerate}
-        \item Mostrare lo stato in tempo reale dei camioncini
-        \begin{enumerate}[label*=\arabic*.]
-            \item Mostrare la posizione dei camioncini
-            \item Mostrare il volume occupato dei camioncini
-        \end{enumerate}
-        \item Mostrare le segnalazioni
-        \begin{enumerate}[label*=\arabic*.]
-            \item Mostrare la lista di segnalazioni
-        \end{enumerate}
-        \item Registrazione di nuovi cittadini
-        \begin{enumerate}[label*=\arabic*.]
-            \item Creazione di nuove smart-card per i cittadini
-        \end{enumerate}
-    \end{enumerate}
-\end{enumerate}
+\end{itemize}
 
 \subsection{Project Overview Statement}
 In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overview Statement} per ricevere l'approvazione da parte del \textit{senior management} a procedere con il progetto. Si assume che il \textit{POS} sia stato ben compreso dai \textit{senior manager} e che questi abbiano subito approvato l'inizio del progetto. Tale documento è riportato di seguito:
