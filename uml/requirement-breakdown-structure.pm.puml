@@ -63,6 +63,6 @@ legend left
     Blue = Goal
     Green = Requirements
     Yellow = Functions
-    Red = Features
+    White = Features
 endlegend
 @endwbs

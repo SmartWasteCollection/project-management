@@ -7,16 +7,16 @@ wbsDiagram {
         Shadowing 0.0
     }
     .goals {
-        BackgroundColor #4D96FF
+        BackgroundColor #6FB2D2
     }
     .requirements {
-        BackgroundColor #6BCB77
+        BackgroundColor #85C88A
     }
     .functions {
-        BackgroundColor #FFD93D
+        BackgroundColor #EBD671
     }
     .features {
-        BackgroundColor #FF6B6B
+        BackgroundColor #EEEEEE
     }
 }
 </style>
