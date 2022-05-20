@@ -7,51 +7,57 @@ goal(Optimize Waste Collection)
 requirement(Dumpster infrastructure)
 
 function(Open dumpsters\nwith smart-cards)
-feature(Deploy smart-cards)
-feature(Dumpster read\nfrom the database)
+feature(Authenticate citizen)
+feature(Open and close\ndumpsters)
 
 function(Collect and share data)
-feature(Update occupied volume\non database)
-feature(Collect citizens' disposals)
-feature(Save citizens' disposals\non the database)
+feature(Update occupied volume)
+feature(Store information about\ncitizens' disposals)
+feature(Notify issues)
 
 'Citizen App
 requirement(Citizen app)
-function(Consult dumpsters'\nvolume status)
-feature(Read dumpster's occupied\nvolume from database)
-feature(Display dumpsters with\ntheir volume on interface)
+function(Check dumpsters'\nstatus)
+feature(Display dumpsters\non graphic interface)
+feature(Check dumpsters'\navailability)
+feature(Check dumpster's\noccupied volume)
 
-function(Book extraordinary\nwaste disposal missions)
-feature(Create waste\ndisposal request)
+function(Book extraordinary\nwaste disposal)
+feature(Create a waste\ndisposal request)
 
 function(Notify issues)
-feature(Write issue\non database)
+feature(Write a complaint)
+feature(Send complaint)
 
 'Trucks Routing
 requirement(Trucks routing)
 function(Plan ordinary waste\ndisposal missions)
-feature(Trigger event when\na dumpster is full)
-feature(Calculate half-full dumpsters\nnear the full one)
+feature(Notify when a\ndumpster is full)
+feature(Look for other dumpsters to\ncollect near the full one)
 feature(Calculate best route)
+feature(Track trucks'\nreal time position)
 
 function(Plan extraordinary waste\ndisposal missions)
+feature(Notify when a request\nis submitted)
 feature(Group missions\nby type of waste)
 feature(Calculate best route)
+feature(Track trucks'\nreal time position)
 
 'Admin Dashboard
 requirement(Admin dashboard)
 function(Display collection\npoints' status)
-feature(Read dumpsters' occupied\nvolume from database)
+feature(Display dumpsters'\navailability)
+feature(Display dumpsters'\noccupied volume)
 
 function(Display trucks'\nreal-time position)
-feature(Update real-time trucks'\nposition on database)
-feature(Read real-time trucks'\nposition on database)
+feature(Display trucks'\nreal time position)
+feature(Display trucks'\ncarried waste)
 
 function(Display complaints)
-feature(Read list of complaints\nfrom database)
+feature(Display list of complaints)
 
-function(Register new citizens\nwith a smart-card)
-feature(Write new citizen\non database)
+function(Register new citizens)
+feature(Create smart-cards\nfor new citizens)
 
 legend left
     Blue = Goal
