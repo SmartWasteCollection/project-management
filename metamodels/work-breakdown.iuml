@@ -1,0 +1,45 @@
+@startuml Work Breakdown Structure
+<style>
+wbsDiagram {
+    .requirements .functions .features .activities .tasks {
+        LineColor #000000
+        RoundCorner 10
+        Shadowing 0.0
+    }
+    .requirements {
+        BackgroundColor #6FB2D2
+    }
+    .functions {
+        BackgroundColor #85C88A
+    }
+    .features {
+        BackgroundColor #EBD671
+    }
+    .activities {
+        BackgroundColor #EEEEEE
+    }
+    .tasks {
+        BackgroundColor #FFFFFF
+    }
+}
+</style>
+!unquoted procedure requirement($name)
+* $name <<requirements>>
+!endprocedure
+'
+!unquoted procedure function($name)
+** $name <<functions>>
+!endprocedure
+'
+!unquoted procedure feature($name)
+*** $name <<features>>
+!endprocedure
+'
+!unquoted procedure activity($name)
+**** $name <<activities>>
+!endprocedure
+'
+!unquoted procedure task($name)
+***** $name <<tasks>>
+!endprocedure
+@enduml
