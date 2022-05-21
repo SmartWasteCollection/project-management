@@ -36,9 +36,19 @@ Date queste premesse, Richie ha identificato i seguenti sistemi software che com
 \end{itemize}
 
 \subsection{Analisi del Dominio}
-Per studiare al meglio il dominio in questione è stato adottato un approccio \textit{Domain Driven}: nello specifico è stata condotta un'intervista con il cliente coinvolgendo tutti i membri del team. In seguito, è stata condotta un'analisi che ha trasformato i desideri del cliente in delle \textit{user stories}. A partire da quest'ultime, è stato prodotto un diagramma di \textit{impact mapping}: tale diagramma è d'ausilio alla definizione del \textbf{goal} e ad una prima bozza della \textit{Requirement Breakdown Structure}.
+Sono state condotti 3 \textit{Project Scoping Meetings} con lo scopo di studiare al meglio il dominio in questione, in particolare adottando un approccio \textit{Domain Driven}.
 
-\subsubsection{Intervista col Committente}
+Nella prima riunione è stata discussa la proposta del cliente che, pertanto, è stato coinvolto in prima persona.
+Al fine di chiarire eventuali dubbi ed ambiguità presenti nella proposta stessa, è stata inoltre condotta un'intervista (\ref{sec:interview}): a questa hanno partecipato, oltre ovviamente al cliente, i project manager, i membri core del team ed un facilitator. Quest'ultima figura è stata messa a disposizione direttamente dal cliente poiché presenta competenze sia tecniche che riguardanti il dominio del problema.
+
+In seguito, è stata condotta una seconda riunione con lo scopo di analizzare in maniera approfondita il dominio.
+A questa riunione hanno partecipato i project manager, i membri core del team e il facilitator del cliente; l'obiettivo di questo meeting era quello di tradurre i desideri del cliente in user stories e requisiti formali.
+L'output di questa riunione ha compreso, oltre a user stories e \textit{Requirements Breakdown Structure}, anche documenti formali utili successivamente al team tra cui \textit{Impact Mapping}, \textit{Benefit Mapping}, diagrammi dei casi d'uso e un vocabolario comune sotto forma di \textit{Ubiquitous Language}.
+
+L'obiettivo della terza ed ultima riunione è stato quello di stilare un documento di \textit{Project Overview Statement} in modo da formalizzare definitivamente il progetto.
+A questa hanno partecipato, proprio come nella prima, il cliente, i project manager, i membri core del team e il facilitator.
+
+\subsubsection{Intervista col Committente}\label{sec:interview}
 Si riporta di seguito l'intervista con il committente.
 
 \question{1}{Com'è attualmente gestita la raccolta dei rifiuti?}
@@ -125,7 +135,6 @@ Stiamo anche pianificando di acquisire camioncini specifici per i rifiuti straor
 \question{14}{Come volete gestire i rifiuti straordinari?}
 \answer{Al momento, i rifiuti straordinari vengono portati direttamente alle filiere dai cittadini. Tuttavia, vorremmo che i cittadini siano in grado di prenotare un appuntamento per raccogliere i rifiuti straordinari direttamente a casa loro.}
 
-\subsection{Requisiti}
 \subsubsection{User Stories}
 Dall'intervista col cliente sono scaturiti quelli che saranno i 3 attori principali nel sistema da realizzare: i manager dell'azienda cliente, i cittadini e gli autisti dei camion dei rifiuti. Le \textit{user stories} prodotte (elencate di seguito) sono state quindi realizzate concentrandosi su questi attori.
 
