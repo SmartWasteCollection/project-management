@@ -12,4 +12,6 @@ uml/dashboard-use-cases
 uml/complaints-use-cases
 uml/requirement-breakdown-structure
 uml/wbs-dumpster-infrastructure
+uml/wbs-trucks-routing
+uml/wbs-admin-dashboard
 uml/wbs-citizen-app
