@@ -2,14 +2,25 @@
 !include ../metamodels/work-breakdown.iuml
 
 requirement(Trucks routing)
+
 function(Plan ordinary waste\ndisposal missions)
 feature(Notify when a\ndumpster is full)
+activity(Detect volume at 75%)
+task(Check limit after\nevery disposal)
+activity(Send notification to server)
+task(Send dumpster ID)
+task(Find first available\ntruck for the mission)
 feature(Look for other dumpsters to\ncollect near the full one)
+activity(Consider every dumpster\nof the same type of waste\nwith volume occupied over 50%)
 feature(Calculate best route)
+activity(Implement Dijkstra's algorithm)
 feature(Track trucks'\nreal time position)
+activity(Provide trucks\nwith GPS sensor)
+activity(Share localization\nwith server)
 
 function(Plan extraordinary waste\ndisposal missions)
 feature(Notify when a request\nis submitted)
+
 feature(Group missions\nby type of waste)
 feature(Calculate best route)
 feature(Track trucks'\nreal time position)
