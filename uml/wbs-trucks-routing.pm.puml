@@ -1,0 +1,17 @@
+@startwbs
+!include ../metamodels/work-breakdown.iuml
+
+requirement(Trucks routing)
+function(Plan ordinary waste\ndisposal missions)
+feature(Notify when a\ndumpster is full)
+feature(Look for other dumpsters to\ncollect near the full one)
+feature(Calculate best route)
+feature(Track trucks'\nreal time position)
+
+function(Plan extraordinary waste\ndisposal missions)
+feature(Notify when a request\nis submitted)
+feature(Group missions\nby type of waste)
+feature(Calculate best route)
+feature(Track trucks'\nreal time position)
+
+@endwbs
