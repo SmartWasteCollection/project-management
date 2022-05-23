@@ -8,7 +8,7 @@ echo "
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{$IMAGE_PATH}
-    \caption{$CAPTION}
+    \caption{$CAPTION \hyperlink{back:$1}{Torna indietro}.}
     \label{fig:$1}
 \end{figure}
 " >> doc/appendix/appendix.tex
