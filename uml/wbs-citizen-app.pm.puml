@@ -1,0 +1,41 @@
+@startwbs
+!include ../metamodels/work-breakdown.iuml
+
+requirement(Citizen app)
+
+function(Check dumpsters'\nstatus)
+feature(Display dumpsters\non graphic interface)
+activity(Take dumpsters' positions)
+activity(Print dumpsters on a map)
+task(Use a map of the province)
+task(Print all dumpsters\nin every collection point)
+task(Distinguish dumpsters\nwith the color of their type of waste)
+
+feature(Check dumpsters'\navailability)
+activity(Provide dumpsters\nwith an availability sensor)
+activity(Read availability sensor)
+task(Invoke availability API)
+task(Check for issues)
+
+feature(Check dumpster's\noccupied volume)
+activity(Provide dumpsters\nwith a volume sensor)
+activity(Read volume sensor)
+task(Invoke volume API)
+task(Check for issues)
+
+function(Book extraordinary\nwaste disposal)
+feature(Create a waste\ndisposal request)
+activity(Create page with\nrequest details)
+task(Insert address)
+task(Insert type of\nextraordinary waste)
+activity(Create calendar with\npossible dates)
+task(Read trucks' availability)
+task(Filter available dates\non calendar)
+
+function(Notify issues)
+feature(Write a complaint)
+activity(Create text area\nfor complaints)
+feature(Send complaint)
+activity(Invoke complaints API)
+
+@endwbs
