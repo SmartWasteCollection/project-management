@@ -4,16 +4,31 @@
 requirement(Admin dashboard)
 function(Display collection\npoints' status)
 feature(Display dumpsters'\navailability)
+activity(Read availability sensor)
+task(Invoke availability API)
+task(Check for issues)
 feature(Display dumpsters'\noccupied volume)
+activity(Read volume sensor)
+task(Invoke volume API)
+task(Check for issues)
 
 function(Display trucks'\nreal time status)
 feature(Display trucks'\nposition)
+activity(Read trucks'\nlocalization sensor)
+task(Update trucks'\nreal time position)
 feature(Display trucks'\ncarried waste)
+activity(Read trucks'\nvolume sensor)
+task(Update trucks'\nreal time occupied volume)
 
 function(Display complaints)
 feature(Display list of complaints)
+activity(Read complaints\nfrom database)
 
 function(Register new citizens)
 feature(Create smart-cards\nfor new citizens)
+activity(Create API for citizen creation)
+task(Insert citizen name)
+task(Insert citizen address)
+
 
 @endwbs
