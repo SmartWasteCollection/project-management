@@ -1,0 +1,22 @@
+@startuml
+<style>
+ganttDiagram {
+  timeline {
+    'LineColor transparent
+    'FontColor transparent
+ }
+}
+</style>
+'
+!unquoted procedure task($task, $duration)
+[$task] lasts $duration days
+!endprocedure
+'
+!unquoted procedure task($task, $alias, $duration)
+[$task] as [$alias] lasts $duration days
+!endprocedure
+'
+!unquoted procedure endtostart($task1, $task2)
+[$task1]->[$task2]
+!endprocedure
+@enduml
