@@ -11,3 +11,5 @@ uml/extraordinary-management-use-cases
 uml/dashboard-use-cases
 uml/complaints-use-cases
 uml/requirement-breakdown-structure
+uml/wbs-dumpster-infrastructure
+uml/wbs-citizen-app
