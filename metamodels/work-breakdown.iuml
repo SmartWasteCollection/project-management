@@ -7,16 +7,16 @@ wbsDiagram {
         Shadowing 0.0
     }
     .requirements {
-        BackgroundColor #6FB2D2
-    }
-    .functions {
         BackgroundColor #85C88A
     }
-    .features {
+    .functions {
         BackgroundColor #EBD671
     }
-    .activities {
+    .features {
         BackgroundColor #EEEEEE
+    }
+    .activities {
+        BackgroundColor #CDDEFF
     }
     .tasks {
         BackgroundColor #FFFFFF
@@ -42,4 +42,12 @@ wbsDiagram {
 !unquoted procedure task($name)
 ***** $name <<tasks>>
 !endprocedure
+'
+legend right
+    Green = Requirement
+    Yellow = Function
+    Grey = Feature
+    Light Blue = Activity
+    White = Task
+endlegend
 @enduml
