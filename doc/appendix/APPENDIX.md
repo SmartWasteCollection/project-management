@@ -1,3 +1,8 @@
+img/citizen-ubiquitous-language
+img/collection-ubiquitous-language
+img/dumpster-ubiquitous-language
+img/truck-ubiquitous-language
+img/waste-ubiquitous-language
 uml/impact-mapping
 uml/benefit-mapping
 uml/ordinary-disposal-use-cases
