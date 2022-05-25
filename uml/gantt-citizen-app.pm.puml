@@ -1,0 +1,39 @@
+@startgantt
+!include ../metamodels/gantt.iuml
+title Citizen App Gantt Diagram
+!$requirement = CA
+
+--Check dumpsters' status--
+
+task(1, 8)
+task(2, 6)
+task(3, 6)
+task(4, 5)
+
+endtostart(1, 3)
+endtostart(2, 3)
+endtostart(3, 4)
+
+task(5, 5)
+task(6, 5)
+task(7, 5)
+task(8, 5)
+
+--Book extraordinary waste disposal--
+
+task(9, 10)
+task(10, 4)
+
+endtostart(9, 10)
+
+task(11, 6)
+task(12, 4)
+
+endtostart(11, 12)
+
+--Notify issues--
+
+task(13, 3)
+task(14, 4)
+
+@endgantt
