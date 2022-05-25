@@ -1,15 +1,6 @@
 @startuml
-<style>
-ganttDiagram {
-  timeline {
-    'LineColor transparent
-    'FontColor transparent
- }
-}
-</style>
-'
 !unquoted procedure task($task, $duration)
-[$task] lasts $duration days
+[$requirement-$task] lasts $duration days
 !endprocedure
 '
 !unquoted procedure task($task, $alias, $duration)
@@ -17,6 +8,10 @@ ganttDiagram {
 !endprocedure
 '
 !unquoted procedure endtostart($task1, $task2)
+[$requirement-$task1]->[$requirement-$task2]
+!endprocedure
+'
+!unquoted procedure endtostartreq($task1, $task2)
 [$task1]->[$task2]
 !endprocedure
 @enduml
