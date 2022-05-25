@@ -1,0 +1,13 @@
+@startgantt
+!include ../metamodels/gantt.iuml
+
+task(Dumpster Infrastructure, di, 10)
+task(Trucks Routing, tr, 10)
+task(Admin Dashboard, ad, 10)
+task(Citizen App, ca, 10)
+
+endtostart(di, tr)
+endtostart(tr, ad)
+endtostart(tr, ca)
+
+@endgantt
