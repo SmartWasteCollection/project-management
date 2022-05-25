@@ -11,7 +11,12 @@ uml/extraordinary-management-use-cases
 uml/dashboard-use-cases
 uml/complaints-use-cases
 uml/requirement-breakdown-structure
+uml/gantt-requirements-dependencies
 uml/wbs-dumpster-infrastructure
 uml/wbs-trucks-routing
 uml/wbs-admin-dashboard
 uml/wbs-citizen-app
+uml/gantt-dumpster-infrastructure
+uml/gantt-trucks-routing
+uml/gantt-admin-dashboard
+uml/gantt-citizen-app
