@@ -1,0 +1,41 @@
+@startgantt
+!include ../metamodels/gantt.iuml
+title Admin Dashboard Gantt Diagram
+!$requirement = AD
+
+--Display collection points' status--
+
+task(1, 5)
+task(2, 3)
+
+endtostart(1, 2)
+
+task(3, 5)
+task(4, 3)
+
+endtostart(3, 4)
+
+--Display trucks' real time status--
+
+task(5, 8)
+task(6, 4)
+
+endtostart(5, 6)
+
+task(7, 6)
+task(8, 3)
+
+endtostart(7, 8)
+
+--Display complaints--
+
+task(9, 4)
+
+--Register new citizens--
+
+task(10, 3)
+task(11, 3)
+
+endtostart(10 ,11)
+
+@endgantt
