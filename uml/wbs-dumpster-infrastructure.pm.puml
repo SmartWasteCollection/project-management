@@ -10,6 +10,7 @@ task(Provide dumpster with NFC sensor)
 task(Read card content)
 
 activity(Check authentication server)
+task(Create authentication server)
 task(Send request to server with read data)
 task(Handle response from server)
 
