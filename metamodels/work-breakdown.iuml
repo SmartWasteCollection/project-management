@@ -23,6 +23,9 @@ wbsDiagram {
     }
 }
 </style>
+'
+!$counter = 1
+'
 !unquoted procedure requirement($name)
 * $name <<requirements>>
 !endprocedure
@@ -39,8 +42,14 @@ wbsDiagram {
 **** $name <<activities>>
 !endprocedure
 '
+!unquoted procedure activity($name, $increment)
+**** [$title-$counter]\n$name <<activities>>
+!$counter = $counter + 1
+!endprocedure
+'
 !unquoted procedure task($name)
-***** $name <<tasks>>
+***** [$title-$counter]\n$name <<tasks>>
+!$counter = $counter + 1
 !endprocedure
 '
 legend right
