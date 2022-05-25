@@ -1,11 +1,12 @@
 @startwbs
 !include ../metamodels/work-breakdown.iuml
+!$title = CA
 
 requirement(Citizen app)
 
 function(Check dumpsters'\nstatus)
 feature(Display dumpsters\non graphic interface)
-activity(Take dumpsters' positions)
+activity(Take dumpsters' positions,)
 activity(Print dumpsters on a map)
 task(Use a map of the province)
 task(Display all dumpsters\nin every collection point)
@@ -32,8 +33,8 @@ task(Filter available dates\non calendar)
 
 function(Notify issues)
 feature(Write a complaint)
-activity(Create text area\nfor complaints)
+activity(Create text area\nfor complaints,)
 feature(Send complaint)
-activity(Invoke complaints API)
+activity(Invoke complaints API,)
 
 @endwbs

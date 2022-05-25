@@ -1,0 +1,16 @@
+@startgantt
+!include ../metamodels/gantt.iuml
+
+task(Provide dumpster with NFC sensor, providenfc, 13)
+task(Read card content, readcard, 10)
+
+endtostart(providenfc, readcard)
+
+task(Send request to server with read data, readdata, 14)
+task(Handle response from server, handle, 11)
+
+endtostart(readdata, handle)
+
+task(Provide dumpster with actuator, actuator, 12)
+
+@endgantt
