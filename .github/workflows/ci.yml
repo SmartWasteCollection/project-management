@@ -16,7 +16,7 @@ jobs:
       - name: Generate PNG Diagrams
         uses: holowinski/plantuml-github-action@main
         with:
-          args: -v -tpng uml/
+          args: -v -tpng uml/*.puml
       - name: Generate Appendix
         run: ./.github/scripts/generate-appendix.sh
         shell: bash
