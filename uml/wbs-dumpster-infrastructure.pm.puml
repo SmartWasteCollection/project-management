@@ -15,6 +15,7 @@ task(Send request to server with read data)
 task(Handle response from server)
 
 feature(Open and close\ndumpsters)
+activity(Create dumpsters' digital twin,)
 activity(Provide dumpster with actuator, )
 activity(Open dumpster)
 task(Send command to actuator\nfor opening)
