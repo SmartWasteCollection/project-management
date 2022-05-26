@@ -19,8 +19,8 @@ endtostart(3, 5)
 task(6, 10)
 
 task(7, 3)
-task(8, 10)
-task(9, 3)
+task(8, 4)
+task(9, 5)
 
 endtostart(6, 8)
 endtostart(6, 9)
@@ -35,6 +35,7 @@ task(13, 3)
 endtostart(6, 10)
 endtostart(6, 11)
 endtostart(6, 12)
+endtostart(6, 13)
 endtostart(7, 10)
 endtostart(7, 11)
 endtostart(7, 12)
@@ -43,10 +44,12 @@ endtostart(7, 13)
 
 --Collect and share data--
 
-task(14, 8)
-task(15, 8)
-task(16, 3)
+task(14, 3)
+task(15, 4)
+task(16, 4)
 
+endtostart(6, 15)
+endtostart(6, 16)
 endtostart(14, 15)
 endtostart(14, 16)
 
@@ -54,13 +57,15 @@ task(17, 3)
 task(18, 4)
 
 endtostart(14, 17)
-endtostart(9, 17)
-endtostart(14, 18)
+endtostart(6, 17)
+endtostart(17, 18)
 
 task(19, 5)
 task(20, 5)
 
 task(21, 3)
 task(22, 5)
+
+endtostart(6, 21)
 
 @endgantt

@@ -5,10 +5,10 @@ title Citizen App Gantt Diagram
 
 --Check dumpsters' status--
 
-task(1, 8)
-task(2, 6)
+task(1, 6)
+task(2, 8)
 task(3, 6)
-task(4, 5)
+task(4, 4)
 
 endtostart(1, 3)
 endtostart(2, 3)
@@ -19,21 +19,26 @@ task(6, 5)
 task(7, 5)
 task(8, 5)
 
+endtostart(5, 6)
+endtostart(7, 8)
+
 --Book extraordinary waste disposal--
 
-task(9, 10)
+task(9, 4)
 task(10, 4)
 
 endtostart(9, 10)
 
-task(11, 6)
-task(12, 4)
+task(11, 4)
+task(12, 6)
 
 endtostart(11, 12)
 
 --Notify issues--
 
-task(13, 3)
+task(13, 4)
 task(14, 4)
+
+endtostart(13, 14)
 
 @endgantt
