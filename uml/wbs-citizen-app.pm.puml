@@ -1,6 +1,6 @@
 @startwbs
 !include ../metamodels/work-breakdown.iuml
-!$title = CA
+!define title CA
 
 requirement(Citizen app)
 

@@ -43,12 +43,12 @@ wbsDiagram {
 !endprocedure
 '
 !unquoted procedure activity($name, $increment)
-**** [$title-$counter]\n$name <<activities>>
+**** [title-$counter]\n$name <<activities>>
 !$counter = $counter + 1
 !endprocedure
 '
 !unquoted procedure task($name)
-***** [$title-$counter]\n$name <<tasks>>
+***** [title-$counter]\n$name <<tasks>>
 !$counter = $counter + 1
 !endprocedure
 '

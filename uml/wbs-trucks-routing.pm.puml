@@ -1,6 +1,6 @@
 @startwbs
 !include ../metamodels/work-breakdown.iuml
-!$title = TR
+!define title TR
 
 requirement(Trucks routing)
 

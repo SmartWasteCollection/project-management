@@ -1,6 +1,6 @@
 @startwbs
 !include ../metamodels/work-breakdown.iuml
-!$title = DI
+!define title DI
 requirement(Dumpster infrastructure)
 
 function(Open dumpsters\nwith smart-cards)
