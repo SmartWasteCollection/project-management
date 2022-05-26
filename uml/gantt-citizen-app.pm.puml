@@ -1,7 +1,8 @@
 @startgantt
+!$requirement = CA
+
 !include ../metamodels/gantt.iuml
 title Citizen App Gantt Diagram
-!$requirement = CA
 
 --Check dumpsters' status--
 
