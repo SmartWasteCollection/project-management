@@ -1,7 +1,7 @@
 @startgantt
 !include ../metamodels/gantt.iuml
 title Trucks Routing Gantt Diagram
-!$requirement = TR
+!define requirement TR
 --Plan ordinary waste disposal missions--
 
 task(1, 3)

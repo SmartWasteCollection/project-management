@@ -1,7 +1,7 @@
 @startgantt
 !include ../metamodels/gantt.iuml
 title Admin Dashboard Gantt Diagram
-!$requirement = AD
+!define requirement AD
 
 --Display collection points' status--
 

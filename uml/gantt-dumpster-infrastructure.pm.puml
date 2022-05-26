@@ -1,7 +1,7 @@
 @startgantt
 !include ../metamodels/gantt.iuml
 title Dumpster Infrastructure Gantt Diagram
-!$requirement = DI
+!define requirement DI
 
 --Open dumpsters with smart cards--
 task(1, 3)
