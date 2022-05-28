@@ -1,6 +1,6 @@
 @startgantt
 !include ../metamodels/gantt.iuml
-title Trucks Routing Gantt Diagram
+title Trucks Routing - Project Network Diagram
 !define requirement TR
 --Plan ordinary waste disposal missions--
 

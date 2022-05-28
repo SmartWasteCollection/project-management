@@ -1,6 +1,6 @@
 @startgantt
 !include ../metamodels/gantt.iuml
-title Citizen App Gantt Diagram
+title Citizen App - Project Network Diagram
 !define requirement CA
 
 --Check dumpsters' status--

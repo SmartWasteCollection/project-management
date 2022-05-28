@@ -1,6 +1,6 @@
 @startgantt
 !include ../metamodels/gantt.iuml
-title Dumpster Infrastructure Gantt Diagram
+title Dumpster Infrastructure - Project Network Diagram
 !define requirement DI
 
 --Open dumpsters with smart cards--

@@ -1,6 +1,6 @@
 @startgantt
 !include ../metamodels/gantt.iuml
-title Admin Dashboard Gantt Diagram
+title Admin Dashboard - Project Network Diagram
 !define requirement AD
 
 --Display collection points' status--
