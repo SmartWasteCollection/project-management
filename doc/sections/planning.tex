@@ -10,7 +10,9 @@ Nella prima riunione è stato nuovamente presentato lo sponsor del progetto che 
 
 Nella seconda riunione sono stati validati i requisiti ed è stato individuato un diagramma delle dipendenze tra questi per comprenderne le priorità.
 
-Nei meeting successivi sono state individuate le attività e i task da svolgere per realizzare ogni requisito. A ogni task è stata associata una stima di tempo necessario per la sua implementazione: a partire da queste stime, è stato possibile comprendere a grandi linee la durata di ogni requisito in ore/uomo.
+Nei meeting successivi sono state individuate le attività e i task da svolgere per realizzare ogni requisito. A ogni task è stata associata una stima di tempo necessario per la sua implementazione: a partire da queste stime, è stato possibile comprendere la durata di ogni requisito in ore/uomo.
+
+Durante l'ultimo meeting è stata presentata la schedula al committente che la ha approvata, permettendo così l'inizio del progetto.
 
 \subsubsection{Project Management Life Cycle Model}
 In primo luogo, è stato scelto il \textit{life cycle} ritenuto più adatto per condurre il progetto. Si è quindi optato per un modello \textbf{incrementale}. Tale scelta è stata effettuata perché sono noti a priori sia i goal, sia le soluzioni che permettono di raggiungere gli obiettivi; perciò, non è stato ritenuto necessario adottare un approccio agile. Ciò è dovuto anche all'utilizzo di un approccio \textit{domain driven} che ha permesso di studiare a fondo il dominio del problema. Tuttavia, non è stato scelto un approccio lineare (a cascata) poiché la formalizzazione dei requisiti mediante \textit{user stories} rende naturale la scomposizione in \textbf{milestone}.
@@ -38,3 +40,6 @@ Si riportano quindi le \textit{Work Breakdown Structure} di:
 \end{itemize}
 Ogni diagramma è suddiviso in sezioni che rappresentano le funzioni individuate nella \textit{Requirement Breakdown Structure} (\ref{sec:rbs}). Inoltre, la durata concordata per ogni task è rappresentata in ore/uomo, considerando però che ogni unità lavorativa verrà sviluppata in \textit{pair programming}.
 In passato, è stato dimostrato che le risorse a disposizione hanno una produttività maggiore quando in coppia; di conseguenza, i project manager hanno proposto tale modalità operativa già in fase di \textit{planning} e il committente, che ne ha compreso i vantaggi, ha concordato tale metodologia.
+
+\subsubsection{Gantt Diagram \& Scope Bank}
+Una volta individuata la stima della durata di ogni task, è stata stilata la schedula definitiva considerando le risorse a disposizione. Nello specifico, il \textit{developer team} formato per il progetto è composto da 8 risorse; tuttavia, considerando la modalità operativa del \textit{pair programming} preannunciata, si è pianificato di svolgere in parallelo al massimo 4 task. Il diagramma Gantt prodotto (\refandback{gantt}), considerando le risorse sopracitate, ha definito una schedula di circa 100 ore. Per far fronte a eventuali ritardi si considera di allocare una \textit{Scope Bank} equivalente al 10\% della durata totale del progetto: di conseguenza, al committente verrà presentata una schedula della durata totale di 110 ore (corrispondenti a 18 giorni lavorativi da 6 ore ciascuno).

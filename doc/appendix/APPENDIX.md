@@ -20,3 +20,4 @@ gantt-dumpster-infrastructure
 gantt-trucks-routing
 gantt-admin-dashboard
 gantt-citizen-app
+gantt
