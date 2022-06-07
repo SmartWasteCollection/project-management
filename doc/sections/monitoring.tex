@@ -6,7 +6,15 @@ In questa sezione vengono riportate le strategie adottate per monitorare i task 
 \subsection{Monitoraggio del Progetto}
 Il progetto è stato monitorato da diversi punti di vista. Tale attività è stata ritenuta necessaria per rispettare la pianificazione effettuata ed accorgersi presto di eventuali problematiche. Nello specifico, sono stati utilizzati dei metodi formali per monitorare sia lo stato di avanzamento dei task, sia lo stato dei membri del team in termini di problematiche riscontrate e di produttività.
 
-\subsubsection{Reporting}
+\subsubsection{Progress Reporting}
+Per riportare lo stato di avanzamento dei task, il team ha deciso di affidarsi a due sistemi di reporting; in particolare:
+\begin{itemize}
+    \item \textbf{Trello}, per riportare lo svolgimento delle attività più recenti (\textit{current period reports});
+    \item \textbf{Boardify}, per riportare l'avanzamento del progetto coprendone l'intera storia (\textit{cumulative reports}).
+\end{itemize}
+Entrambi i sistemi scelti permettono di istanziare delle bacheche sulle quali è possibile tracciare l'andamento dei task e individuare lo scostamento tra lo stato di avanzamento attuale e la pianificazione. Inoltre, il secondo sistema è stato sviluppato internamente all'azienda: di conseguenza, i membri del developer team si sono trovati già familiari con tale strumento e ciò ha permesso di ridurre l'\textit{overhead} introdotto dal processo di monitoring.
+
+In aggiunta, il responsabile del prodotto (\textit{Marta}) ha considerato il processo di monitoring come fondamentale per lo sviluppo di codice. Quindi, è stato concordato di inserire tale processo nella \textbf{continuous integration} del prodotto. Infatti, è stato possibile stilare dei report relativi a ciascun task grazie ai messaggi di \textit{commit} effettuati dagli sviluppatori; in questo modo, è stato possibile automatizzare il controllo dello stato di avanzamento in ogni task senza introdurre maggiore \textit{overhead}.
 
 \subsubsection{Issues Log}
 
@@ -15,9 +23,8 @@ Come anticipato nella sezione \ref{sec:planning-operative-rules}, quotidianament
 \begin{itemize}
     \item breve presentazione dello stato di avanzamento dei task svolti dai membri del developer team;
     \item aggiornamento dell'\textit{Issues Log};
-    \item aggiornamento (se necessario) della schedula.
+    \item aggiornamento (se necessario) della schedula;
+    \item aggiornamento del \textbf{Project Notebook}.
 \end{itemize}
-
-
 
 \subsection{Accettazione del Progetto}
