@@ -1,0 +1,21 @@
+@startuml
+!unquoted procedure task($task, $duration)
+[requirement-$task] lasts $duration days
+!endprocedure
+'
+!unquoted procedure task($task, $alias, $duration)
+[$task] as [$alias] lasts $duration days
+!endprocedure
+'
+!unquoted procedure endtostart($task1, $task2)
+[requirement-$task1]->[requirement-$task2]
+!endprocedure
+'
+!unquoted procedure endtostartreq($task1, $task2)
+[$task1]->[$task2]
+!endprocedure
+'
+!unquoted procedure endtostart($req1, $task1, $req2, $task2)
+[$req1-$task1]->[$req2-$task2]
+!endprocedure
+@enduml

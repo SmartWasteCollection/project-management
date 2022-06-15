@@ -1,27 +1,66 @@
 \usepackage[utf8]{inputenc}
-
-%\usepackage[backend=biber, style=numeric, sorting=ynt]{biblatex}
-%\addbibresource{bibliography.bib}
-
 \usepackage[italian]{babel}
-
+\renewcommand{\contentsname}{Indice}
 \linespread{1.2}
-
 \usepackage{geometry}
+\usepackage{quoting}
 \geometry{a4paper}
 \usepackage{graphicx}
+\graphicspath{{./../}}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage[all]{hypcap}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+}
+
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\newtcolorbox{story}[1][]{%
+    sharp corners,
+    enhanced,
+    colback=white,
+    attach title to upper,
+    #1
+}
+\newcommand{\storyactor}[1]{\vspace{20 pt} \textit{As a} \textbf{#1}... \vspace{5 pt}}
 \usepackage{color}
 \usepackage{xcolor}
-
 \usepackage{multirow, hhline}
 \usepackage{array,booktabs}
+%\usepackage[backend=biber, style=numeric, sorting=ynt]{biblatex}
+%\addbibresource{bibliography.bib}
 
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
 \newcommand{\inputn}[1]{
     \input{#1}
     \newpage
+}
+
+\newcommand\refandback[1]{\ref{fig:#1}\hypertarget{back:#1}{}}
+
+\newcommand\question[2]{\noindent#1. #2}
+
+\newcommand\answer[1]{\begin{quoting}#1\end{quoting}}
+
+\newcommand{\possec}[2]{
+    \vspace{-1pt}
+    \begin{tabular}{| p{.9092\textwidth} |}
+        \hline
+        \textbf{#1}\\
+        #2\\
+        \hline
+    \end{tabular}
+}
+
+\geometry{
+    a4paper,
+    total={170mm,240mm},
+    left=30mm,
+    right=30mm,
+    top=30mm,
 }

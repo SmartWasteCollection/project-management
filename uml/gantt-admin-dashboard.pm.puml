@@ -1,0 +1,42 @@
+@startgantt
+!include ../metamodels/gantt.iuml
+title Admin Dashboard - Project Network Diagram
+!define requirement AD
+
+--Display collection points' status--
+
+task(1, 5)
+task(2, 3)
+
+endtostart(1, 2)
+
+task(3, 5)
+task(4, 3)
+
+endtostart(3, 4)
+
+--Display trucks' real time status--
+
+task(5, 4)
+task(6, 8)
+
+endtostart(5, 6)
+
+task(7, 4)
+task(8, 3)
+
+endtostart(6, 8)
+endtostart(7, 8)
+
+--Display complaints--
+
+task(9, 4)
+
+--Register new citizens--
+
+task(10, 4)
+task(11, 4)
+
+endtostart(10 ,11)
+
+@endgantt

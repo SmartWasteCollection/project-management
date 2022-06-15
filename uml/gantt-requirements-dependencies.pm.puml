@@ -1,0 +1,14 @@
+@startgantt
+!include ../metamodels/gantt.iuml
+title Requirement Dependencies
+
+task(Dumpster Infrastructure, di, 10)
+task(Trucks Routing, tr, 10)
+task(Admin Dashboard, ad, 10)
+task(Citizen App, ca, 10)
+
+endtostartreq(di, tr)
+endtostartreq(tr, ad)
+endtostartreq(tr, ca)
+
+@endgantt

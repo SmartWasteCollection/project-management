@@ -1,0 +1,1 @@
+Diagramma Gantt di tutti i task del progetto svolgendo al massimo 4 attività in parallelo. 

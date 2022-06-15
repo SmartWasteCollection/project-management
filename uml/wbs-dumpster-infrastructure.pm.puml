@@ -1,0 +1,46 @@
+@startwbs
+!include ../metamodels/work-breakdown.iuml
+!define title DI
+requirement(Dumpster infrastructure)
+
+function(Open dumpsters\nwith smart-cards)
+feature(Authenticate citizen)
+activity(Read card with NFC sensor)
+task(Provide dumpster with NFC sensor)
+task(Read card content)
+
+activity(Check authentication server)
+task(Create authentication server)
+task(Send request to server with read data)
+task(Handle response from server)
+
+feature(Open and close\ndumpsters)
+activity(Create dumpsters' digital twin,)
+activity(Provide dumpster with actuator, )
+activity(Open dumpster)
+task(Send command to actuator\nfor opening)
+task(Update digital twin status)
+task(Check for issues while opening)
+
+activity(Close dumpster)
+task(Send command to actuator\nfor closing)
+task(Update digital twin status)
+task(Check for issues while closing)
+
+function(Collect and share data)
+feature(Update occupied volume)
+activity(Read data from sensor)
+task(Provide dumpster with\nvolume sensor)
+task(Read sensor value)
+task(Update digital twin status)
+activity(Share the value read from sensor)
+task(Detect when dumpster is closing)
+task(Send read data to server)
+feature(Store information about\ncitizens' disposals)
+activity(Memorize who opened the dumpster,)
+activity(Memorize how much the citizen disposed,)
+feature(Notify issues)
+activity(Update digital twin status,)
+activity(Send issue notification to server,)
+
+@endwbs

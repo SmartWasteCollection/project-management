@@ -1,0 +1,356 @@
+\section{Scoping}
+\label{sec:scoping}
+
+Per svolgere la fase di scoping al meglio, si simula che il progetto Smart Waste Collection venga proposto dal cliente \textit{Sphera}.
+In questo scenario, noi svolgiamo il ruolo di software house e, nello specifico, ricopriamo la posizione di \textit{project manager} con diverse esperienze pregresse.
+
+Nei seguenti capitoli, verrà descritta la richiesta del progetto da parte del cliente, per poi effettuarne un'analisi rappresentata dal Project Overview Statement; tale documento sarà d'interesse sia per i \textit{senior manager} della nostra azienda, sia per quelli dell'azienda cliente.
+
+\subsection{Proposta del Cliente}
+\textit{Sphera} è un'azienda multiutility leader nei servizi ambientali, idrici ed energetici nell'ambito di una regione italiana.
+Negli ultimi due anni ha riscontrato lamentele da parte dei clienti in merito al servizio di smaltimento dei rifiuti.
+In particolare, i cittadini hanno manifestato malcontento a causa dell'inefficienza del servizio stesso e di periodi di
+mancato servizio, in cui non sono stati in grado di conferire i rifiuti.
+Questo problema è dato dal fatto che i cassonetti sono talvolta pieni, tuttavia la raccolta programmata è prevista dopo alcuni giorni.
+\textit{Sphera} stessa si è inoltre accorta che alcune delle raccolte programmate hanno prelevato un quantitativo di rifiuti non sufficiente a giustificare la mobilitazione di un camion.
+Inoltre, un altro problema evidenziato dai cittadini consiste nello smaltimento di rifiuti straordinari (ferro, sterpaglie, ecc.).
+Nello specifico, al momento i cittadini, per smaltire i rifiuti straordinari, si devono personalmente recare presso il punto di smaltimento a loro più vicino, previa prenotazione telefonica al numero verde di \textit{Sphera}.
+Le lamentele riguardano principalmente la disponibilità del servizio di call-center e i lunghi tempi d'attesa per l'effettivo smaltimento.
+Si richiede quindi un sistema che permetta il monitoraggio dei bidoni stessi indicando così all'azienda il momento più opportuno per la raccolta.
+In particolare, il manager dei servizi ambientali Richie Clato ha proposto di introdurre dei nuovi cassonetti con sensori che permettono di misurare il volume e il peso occupati dai rifiuti.
+Inoltre, tali cassonetti possono essere aperti solamente tramite l'utilizzo di una smart card fornita ai cittadini.
+Date queste premesse, Richie ha identificato i seguenti sistemi software che compongono la soluzione:
+\begin{itemize}
+    \item \textbf{Dumpster Infrastructure}: i cassonetti saranno dotati di sensori che ne monitorano vari parametri.
+    È pertanto necessaria un'infrastruttura che consenta di visualizzare in tempo reale lo stato dei cassonetti sparsi per il territorio.
+    La soluzione deve essere scalabile in quanto deve astrarre dal numero di cassonetti.
+    Deve inoltre mantenere lo storico degli accessi dei cittadini per futuri utilizzi, a partire da indagini statistiche fino a includere premi per i cittadini modello.
+    \item \textbf{Citizen App}: un'applicazione mobile che permetta al cittadino di consultare lo stato dei cassonetti in ciascuna stazione di raccolta per sapere se è possibile conferire un particolare tipo di rifiuto.
+    L'applicazione deve presentare una vista "a mappa della città" per permettere al cittadino di orientarsi.
+    Inoltre, sarebbe opportuno se nella \textit{home} il cittadino potesse vedere lo stato di alcune stazioni preferite.
+    \item \textbf{Trucks Routing}: un'applicazione connessa con la \textbf{Dumpster Infrastructure} che organizza gli itinerari dei camioncini sulla base dello stato dei cassonetti in una determinata zona.
+    Quando un autista parte dalla filiera deve avere l'itinerario pronto e deve raccogliere solamente un tipo di rifiuto.
+    \item \textbf{Extraordinary Waste Booking}: un'applicazione o sito che permetta ai cittadini di prenotare lo smaltimento di rifiuti straordinari a casa: il cittadino deve indicare l'indirizzo di casa propria, il tipo di rifiuto straordinario e i giorni di disponibilità per la raccolta.
+    \item \textbf{Admin Dashboard}: un'applicazione che permetta di visualizzare lo stato di cassonetti e posizione dei camioncini in tempo reale per gli amministratori.
+    Deve inoltre poter visualizzare i dati storici e statistiche relative a conferimenti effettuati da cittadini e prenotazioni per raccolte di rifiuti straordinari.
+\end{itemize}
+
+\subsection{Analisi del Dominio}
+Sono state condotti 3 \textit{Project Scoping Meetings} con lo scopo di studiare al meglio il dominio in questione, in particolare adottando un approccio \textit{Domain Driven}.
+
+Nella prima riunione è stata discussa la proposta del cliente che, pertanto, è stato coinvolto in prima persona.
+Al fine di chiarire eventuali dubbi ed ambiguità presenti nella proposta stessa, è stata inoltre condotta un'intervista (\ref{sec:interview}): a questa hanno partecipato, oltre ovviamente al cliente, i project manager, i membri core del team ed un facilitator. Quest'ultima figura è stata messa a disposizione direttamente dal cliente poiché presenta competenze sia tecniche che riguardanti il dominio del problema.
+
+In seguito, è stata condotta una seconda riunione con lo scopo di analizzare in maniera approfondita il dominio.
+A questa riunione hanno partecipato i project manager, i membri core del team e il facilitator del cliente; l'obiettivo di questo meeting era quello di tradurre i desideri del cliente in user stories e requisiti formali.
+L'output di questa riunione ha compreso, oltre a user stories e \textit{Requirements Breakdown Structure}, anche documenti formali utili successivamente al team tra cui \textit{Impact Mapping}, \textit{Benefit Mapping}, diagrammi dei casi d'uso e un vocabolario comune sotto forma di \textit{Ubiquitous Language}.
+
+L'obiettivo della terza ed ultima riunione è stato quello di stilare un documento di \textit{Project Overview Statement} in modo da formalizzare definitivamente il progetto.
+A questa hanno partecipato, proprio come nella prima, il cliente, i project manager, i membri core del team e il facilitator.
+
+\subsubsection{Intervista col Committente}\label{sec:interview}
+Si riporta di seguito l'intervista con il committente.
+
+\question{1}{Com'è attualmente gestita la raccolta dei rifiuti?}
+\answer{Al momento i camioncini raccolgono periodicamente i rifiuti dalle stazioni di raccolta. Noi abbiamo una schedula che elenca quali tipi di rifiuto dobbiamo raccogliere in un dato giorno. Ogni camioncino parte dalla filiera di smaltimento e svuota i cassonetti di tutti i punti di raccolta nella sua \textit{mission area}.
+Noi vorremmo ottimizzare la raccolta per permettere ai cittadini di conferire i rifiuti in qualsiasi momento presso il punto di raccolta più vicino.}
+
+\question{2}{Quanti cassonetti ci sono in ogni punto di raccolta?}
+\answer{In base al numero di persone che vivono nella zona del punto di raccolta, possono esserci uno o più cassonetti per ogni tipo di rifiuto comune. Per esempio, un punto di raccolta può essere composto da due cassonetti della plastica, due della carta e uno per ogni altro tipo.}
+
+\question{3}{Quali tipi di cassonetti ci sono in ogni punto di raccolta?}
+\answer{I tipi di rifiuto presenti in ogni punto di raccolta sono indifferenziata, organico, plastica/alluminio, carta e vetro; tuttavia, stiamo pensando di introdurre altri tipi di rifiuto.
+I cassonetti possono avere caratteristiche fisiche diverse, a seconda dal tipo di rifiuto raccolto. Infatti, ci sono due grandezze possibili per i cassonetti: una grande, adatta per rifiuti che non necessitano di essere raccolti con alta frequenza, e una più piccola, che viene usata per i rifiuti organici, ad esempio.
+Al momento, i cassonetti più grandi possono essere aperti utilizzando una leva ad altezza dei piedi, mentre quelli più piccoli si aprono manualmente. Tuttavia, vorremmo che i cittadini fossero in grado di aprire tutti i cassonetti utilizzando una smart card. }
+
+\question{4}{Quali tipi di rifiuto vorreste raccogliere? Come?}
+\answer{Vorremmo prelevare i rifiuti comuni direttamente dai punti di raccolta. D'altro canto, vorremmo fornire un servizio di raccolta "a casa" \textit{on-demand} per i rifiuti straordinari.
+I rifiuti comuni includono:
+\begin{itemize}
+    \item carta
+    \item plastica/alluminio
+    \item vetro
+    \item indifferenziata
+    \item organico
+\end{itemize}
+I rifiuti straordinari includono:
+\begin{itemize}
+    \item ramaglie
+    \item olio esausto
+    \item ferro
+    \item elettronica
+    \item vestiti
+    \item altro
+\end{itemize}
+}
+
+\question{5}{Quali sono le principali caratteristiche dei cassonetti?}
+\answer{Le principali caratteristiche sono:
+\begin{itemize}
+    \item grandezza: in termini del volume di rifiuti che può contenere (misura in litri)
+    \item colore: indica il tipo di rifiuto raccolto
+    \item apertura: può essere tramite una leva ad altezza piedi o manuale
+\end{itemize}
+}
+
+\question{6}{Quali informazioni vorreste tracciare per quanto riguarda un singolo cassonetto?}
+\answer{Per ogni cassonetto vorremmo sapere:
+\begin{itemize}
+    \item il volume occupato
+    \item se è aperto o chiuso
+    \item se è funzionante o danneggiato
+    \item se deve essere svuotato
+\end{itemize}
+}
+
+\question{7}{Quali tipi di camioncini dei rifiuti avete? Quanti tipi di rifiuti può prelevare un singolo camioncino?}
+\answer{Abbiamo solo un tipo di camioncini. Durante una missione, può raccogliere solo un singolo tipo di rifiuto.
+Stiamo anche pianificando di acquisire camioncini specifici per i rifiuti straordinari per soddisfare le richieste dei clienti.}
+
+\question{8}{Quanti camioncini dei rifiuti avete?}
+\answer{Ce ne sono circa da 10 a 30 parcheggiati in ogni filiera di smaltimento. L'ammontare preciso dipende dal numero di punti di raccolta nella provincia della filiera.}
+
+\question{9}{Quali informazioni vorreste tracciare per quanto riguarda un singolo camioncino dei rifiuti?}
+\answer{Vorremmo tracciare:
+\begin{itemize}
+    \item il volume totale
+    \item il volume attualmente occupato
+    \item il tipo di rifiuto che si sta raccogliendo al momento
+    \item la sua posizione in tempo reale
+\end{itemize}
+}
+
+\question{10}{Dove vengono portati i rifiuti dai camioncini?}
+\answer{I rifiuti vengono portati nella filiera di smaltimento della provincia.}
+
+\question{11}{Quindi i camioncini raccolgono rifiuti da ogni punto di raccolta della provincia?}
+\answer{No. A ogni camioncino viene assegnata una missione e, di conseguenza, una \textit{mission area}. Una \textit{mission area} è composta da un insieme di aree residenziale che sono fisicamente vicine tra loro.}
+
+\question{12}{Come sono distribuiti i punt di raccolta nel territorio?}
+\answer{C'è una filiera di smaltimento per ogni provincia. Ogni filiera è responsabile dei rifiuti prelevati dai punti di raccolta della propria provincia. Una provincia è suddivisa in aree residenziali dove è collocato un singolo punto di raccolta. Le aree residenziali sono dimensionate in modo da "coprire" più o meno lo stesso numero di persone.}
+
+\question{13}{Quali tipi di rifiuto vengono gestiti in una filiera di smaltimento?}
+\answer{Ogni filiera gestisce tutti i tipi di rifiuti. Ciascun tipo di rifiuto viene smaltito da un'apposita catena di smaltimento all'interno della filiera.}
+
+\question{14}{Come volete gestire i rifiuti straordinari?}
+\answer{Al momento, i rifiuti straordinari vengono portati direttamente alle filiere dai cittadini. Tuttavia, vorremmo che i cittadini siano in grado di prenotare un appuntamento per raccogliere i rifiuti straordinari direttamente a casa loro.}
+
+\subsubsection{Ubiquitous Language}
+Per evitare ogni genere di ambiguità all'interno del dominio studiato, è stato accordato un vocabolario comune, identificato come \textit{Ubiquitous Language}. In particolare, sono stati individuati i termini più usati dal cliente e spiegati con la definizione del cliente quando fornita. I termini sono stati raggruppati per \textit{topic}, nello specifico:
+\begin{itemize}
+    \item \textit{Ubiquitous Language} del \textbf{cittadino} (\refandback{citizen-ubiquitous-language}).
+    \item \textit{Ubiquitous Language} della \textbf{raccolta} (\refandback{collection-ubiquitous-language}).
+    \item \textit{Ubiquitous Language} del \textbf{cassonetto} (\refandback{dumpster-ubiquitous-language}).
+    \item \textit{Ubiquitous Language} del \textbf{camioncino} (\refandback{truck-ubiquitous-language}).
+    \item \textit{Ubiquitous Language} dei \textbf{rifiuti} (\refandback{waste-ubiquitous-language}).
+\end{itemize}
+
+\subsubsection{User Stories}
+Dall'intervista col cliente sono scaturiti quelli che saranno i 3 attori principali nel sistema da realizzare: i manager dell'azienda cliente, i cittadini e gli autisti dei camion dei rifiuti. Le \textit{user stories} prodotte (elencate di seguito) sono state quindi realizzate concentrandosi su questi attori.
+
+\storyactor{Manager}
+\begin{story}
+    ... \textit{I want to} observe the real-time position of garbage trucks and the type of waste they are carrying \textit{so that} I can monitor active missions.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe the list of complaints received from citizens and dumpsters \textit{so that} I can fix possible issues.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe collection points and dumpsters' status \textit{so that} I can check whether the system is working or not.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe disposal points' position \textit{so that} I can have a visual representation of their location.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe the list of "at home" collection requests \textit{so that} I can verify the usefulness of the service.
+\end{story}
+\begin{story}
+    ... \textit{I want to} create a new smart card for specific citizens \textit{so that} they can open dumpsters with it.
+\end{story}
+
+\storyactor{Citizen}
+\begin{story}
+    ... \textit{I want to} open dumpsters with my smart card \textit{so that} I can dispose waste effortlessly and without touching the dumpster.
+\end{story}
+\begin{story}
+    ... \textit{I want to} book an "at home" waste collection \textit{so that} I don't have to go to the disposal point.
+\end{story}
+\begin{story}
+    ... \textit{I want to} observe all collection points \textit{so that} I can see the types of waste that I can dispose of, the percentage of occupied volume for every dumpster and whether they are available or not.
+\end{story}
+\begin{story}
+    ... \textit{I want to} report issues \textit{so that} I can help improve the service.
+\end{story}
+
+\storyactor{Truck Driver}
+\begin{story}
+    ... \textit{I want to} automatically receive missions \textit{so that} I can know which disposal points and which type of waste to collect.
+\end{story}
+\begin{story}
+    ... \textit{I want to} automatically receive "at home" missions \textit{so that} I can know which extraordinary waste collection requests I have to satisfy.
+\end{story}
+\begin{story}
+    ... \textit{I want to} report issues \textit{so that} I can notify managers about possible problems.
+\end{story}
+
+\subsubsection{Impact Mapping}
+Il diagramma di \textit{impact mapping} realizzato (\refandback{impact-mapping}) aiuta ad individuare una prima versione del \textbf{goal}. Inoltre, permette di specificare quali sono gli attori del dominio studiato e, per ognuno di questi, quali sono le variazioni di maggiore impatto introdotte dal progetto. In questo modo si riescono a dedurre delle idee per eventuali \textit{deliverable} da proporre nel \textit{Project Overview Statement}. Infine, il diagramma di \textit{impact mapping} può fungere da spunto per la \textit{Requirement Breakdown Structure}.
+
+Inoltre, è stato prodotto un diagramma di \textit{benefit mapping} (\refandback{benefit-mapping}) realizzato a partire dalle \textit{user stories}. Questo mostra chi sono gli attori che beneficiano maggiormente dai cambiamenti introdotti dal sistema.
+
+\subsubsection{Casi d'Uso}
+Sulla base delle user stories individuate, sono stati prodotti dei diagrammi dei casi d'uso per meglio formalizzare i requisiti. In particolare, sono stati analizzati gli scenari:
+\begin{itemize}
+    \item \textbf{Ordinary waste disposal} (\refandback{ordinary-disposal-use-cases}): lo scenario in cui il cittadino si reca presso il \textit{collection point} per conferire i propri rifiuti; gli attori coinvolti in tale caso d'uso sono il cittadino e il camioncino dei rifiuti.
+    \item \textbf{Ordinary waste collection} (\refandback{ordinary-collection-use-cases}): il processo che prevede la missione di raccolta dei rifiuti all'interno dei cassonetti da parte dei camioncini.
+    \item \textbf{Extraordinary waste management} (\refandback{extraordinary-management-use-cases}): la gestione dei rifiuti straordinari mediante raccolta a casa dei cittadini da parte dei camioncini.
+    \item \textbf{Dashboard} (\refandback{dashboard-use-cases}): l'utilizzo della dashboard da parte dei manager e della \textbf{Citizen App} da parte dei cittadini.
+    \item \textbf{Complaints} (\refandback{complaints-use-cases}): la presentazione di reclami da parte di cittadini, autisti dei camioncini e cassonetti e successiva visualizzazione da parte dei manager.
+\end{itemize}
+
+\subsubsection{Requirement Breakdown Structure}\label{sec:rbs}
+Una volta analizzati i casi d'uso e le \textit{user stories}, è stato prodotto un diagramma di \textit{Requirement Breakdown Structure} \refandback{requirement-breakdown-structure}. Questo permette di descrivere ogni requisito in termini delle funzionalità che questo introduce.
+
+Il \textbf{goal} che accomuna i requisti è l'ottimizzazione della raccolta dei rifiuti. I requisiti che ne scaturiscono coincidono con gli elementi di primo livello; vi sono poi le funzioni di ciascuno, che spiegano quali sono le funzionalità di più alto livello di ciascun requisito. Le funzioni si suddividono ulteriormente in delle feature più specifiche.
+
+\begin{itemize}
+    \item \textbf{Ottimizzazione della raccolta dei rifiuti}
+    \begin{enumerate}[label*=\arabic*.]
+        \item \textbf{Dumpster Infrastructure}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Apertura dei cassonetti con smart-cards
+            \begin{enumerate}[label*=\arabic*.]
+                \item Autenticazione delle smart-card
+                \item Apertura e chiusura di cassonetti
+            \end{enumerate}
+            \item Raccolta e condivisione dati
+            \begin{enumerate}[label*=\arabic*.]
+                \item Aggiornamento del volume occupato
+                \item Salvataggio di informazioni sul conferimento dei cittadini
+                \item Segnalazione problemi
+            \end{enumerate}
+        \end{enumerate}
+        \item \textbf{Citizen App}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Verifica dello stato dei cassonetti
+            \begin{enumerate}[label*=\arabic*.]
+                \item Interfaccia grafica con cassonetti
+                \item Verifica della disponibilità dei cassonetti
+                \item Verifica del volume occupato dei cassonetti
+            \end{enumerate}
+            \item Prenotazione di smaltimento di rifiuti straordinari
+            \begin{enumerate}[label*=\arabic*.]
+                \item Creazione di una richiesta di smaltimento di rifiuti straordinari
+            \end{enumerate}
+            \item Segnalazione problemi
+            \begin{enumerate}[label*=\arabic*.]
+                \item Scrivere una lamentela
+                \item Inviare lamentele
+            \end{enumerate}
+        \end{enumerate}
+        \item \textbf{Trucks Routing}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Pianificare missioni di smaltimento di rifiuti ordinari
+            \begin{enumerate}[label*=\arabic*.]
+                \item Inviare notifica di "cassonetto pieno"
+                \item Ricerca di altri cassonetti "quasi pieni" nei dintorni
+                \item Calcolo del percorso migliore
+                \item Tracciamento della posizione in tempo reale dei camioncini
+            \end{enumerate}
+            \item Pianificare missioni di smaltimento di rifiuti straordinari
+            \begin{enumerate}[label*=\arabic*.]
+                \item Notifica di richiesta di smaltimento di rifiuti straordinari
+                \item Raggruppamento di missioni per tipo di rifiuto straordinario
+                \item Calcolo del percorso migliore
+                \item Tracciamento della posizione in tempo reale dei camioncini
+            \end{enumerate}
+        \end{enumerate}
+        \item \textbf{Admin Dashboard}
+        \begin{enumerate}[label*=\arabic*.]
+            \item Mostrare lo stato dei punti di raccolta
+            \begin{enumerate}[label*=\arabic*.]
+                \item Mostrare la disponibilità dei cassonetti
+                \item Mostrare il volume occupato dei cassonetti
+            \end{enumerate}
+            \item Mostrare lo stato in tempo reale dei camioncini
+            \begin{enumerate}[label*=\arabic*.]
+                \item Mostrare la posizione dei camioncini
+                \item Mostrare il volume occupato dei camioncini
+            \end{enumerate}
+            \item Mostrare la missioni
+            \begin{enumerate}[label*=\arabic*.]
+                \item Mostrare la lista di missioni attive
+            \end{enumerate}
+            \item Mostrare le segnalazioni
+            \begin{enumerate}[label*=\arabic*.]
+                \item Mostrare la lista di segnalazioni
+            \end{enumerate}
+            \item Registrazione di nuovi cittadini
+            \begin{enumerate}[label*=\arabic*.]
+                \item Creazione di nuove smart-card per i cittadini
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+\end{itemize}
+
+\subsection{Project Overview Statement}
+In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overview Statement} per ricevere l'approvazione da parte del \textit{senior management} a procedere con il progetto. Si assume che il \textit{POS} sia stato ben compreso dai \textit{senior manager} e che questi abbiano subito approvato l'inizio del progetto. Tale documento è riportato di seguito:
+
+\newpage
+\begin{tabular}{| p{.25\textwidth} | p{.3\textwidth} | p{.30\textwidth} | }
+    \hline
+    \begin{tabular}{p{.25\textwidth}}\textbf{PROJECT OVERVIEW STATEMENT}\\\end{tabular} &
+    \begin{tabular}{p{.3\textwidth}}{\scriptsize Nome Progetto} \\Smart Waste Collection\end{tabular} &
+    \begin{tabular}{p{.30\textwidth}}{\scriptsize Project Managers} \\Alessandro Marcantoni,\\Simone Romagnoli\end{tabular} \\
+    \hline
+\end{tabular}
+
+\possec{Problemi/Opportunità}{
+    Il servizio di smaltimento dei rifiuti dell'azienda \textit{Sphera} è inefficiente: talvolta i cassonetti sono pieni, pertanto i cittadini non riescono a conferire i propri rifiuti, e la raccolta programmata avverrà solo alcuni giorni dopo.\\
+    Inoltre, la clientela è fortemente insoddisfatta del metodo di raccolta dei rifiuti straordinari che al momento prevede una prenotazione al numero verde per potersi successivamente recare di persona al punto di smaltimento.\\
+    L'azienda potrebbe infine sfruttare l'ottimizzazione della raccolta dei rifiuti per minimizzare le missioni di raccolta che prelevano un quantitativo di rifiuti non abbastanza elevato: \textit{Sphera} stessa ha infatti rilevato che alcune raccolte programmate hanno prelevato un quantitativo di rifiuti non sufficiente a giustificare la missione di raccolta.
+}
+
+\possec{Goal}{
+    L'obiettivo principale è ottimizzare la raccolta rifiuti facendo in modo che, quando almeno un cassonetto raggiunge il 75\% di volume occupato, parta una missione di raccolta che svuoti anche i cassonetti pieni più del 50\% in aree limitrofe.\\
+    Parallelamente, si vuole riorganizzare la raccolta di rifiuti straordinari in modo che il 95\% degli appuntamenti venga concordato per via telematica e la raccolta avvenga a casa del cliente.
+}
+
+\possec{Obiettivi}{
+    Si vogliono realizzare i seguenti sottosistemi:
+    \begin{itemize}
+        \item \textbf{Dumpster Infrastructure}: dotare i cassonetti di sensori e attuatori in grado di:
+        \begin{itemize}
+            \item monitorare il volume occupato;
+            \item aprire il cassonetto all'avvicinamento di una smart card;
+            \item memorizzare/condividere i dati raccolti.
+        \end{itemize}
+        \item \textbf{Citizen App}: applicazione mobile che permetta al cittadino di:
+        \begin{itemize}
+            \item consultare lo stato di riempimento dei cassonetti nei punti di raccolta;
+            \item prenotare un appuntamento per smaltimento di rifiuti straordinari;
+            \item segnalare eventuali problemi/reclami.
+        \end{itemize}
+        \item \textbf{Trucks Routing}: sistema reattivo che organizza missioni di raccolta rifiuti (ordinari e straordinari) .
+        \item \textbf{Admin Dashboard}: piattaforma che consente ai manager di visualizzare informazioni relative ai cassonetti, posizione dei camioncini in tempo reale e una lista dei reclami.
+    \end{itemize}
+}
+
+\possec{Criteri di Successo}{
+    \begin{enumerate}
+        \item I cassonetti dei rifiuti non raggiungono mai il 100\% di volume occupato.
+        \item Non si ricevono più di 5 reclami al mese.
+        \item Lo smaltimento di rifiuti straordinari avviene al 95\% in seguito a prenotazioni sulla \textbf{Citizen App}.
+    \end{enumerate}
+}
+
+\possec{Rischi/Assunzioni/Ostacoli}{
+    \begin{itemize}
+        \item Si assume che l'azienda \textit{Sphera} possa sostenere i costi dovuti alla realizzazione dell'intero progetto.
+        \item Si assume che i rifiuti conferiti da un singolo cittadino non superino il 10\% della capacità massima dei cassonetti.
+        \item Si assume che tutti i cittadini ricevano la propria smart card per il conferimento di rifiuti.
+        \item La messa a terra dei nuovi cassonetti e la distribuzione delle smart card ai cittadini costituiscono un ostacolo temporale.
+        \item C'è il rischio che i cittadini non sfruttino i nuovi servizi, ad esempio chiamando il numero verde per prenotare missioni di smaltimento di rifiuti straordinari.
+        \item C'è il rischio che i cittadini non sappiano sfruttare la tecnologia delle smart card e non riescano a conferire i propri rifiuti.
+    \end{itemize}
+}

@@ -1,0 +1,67 @@
+@startuml Context Mapping
+!procedure subdomain($name, $alias)
+rectangle "$name Subdomain" as $alias
+!endprocedure
+'
+!procedure context($name, $alias)
+storage "$name Context" as $alias
+!endprocedure
+'
+!procedure context_supplier($name, $alias)
+context($name, $alias)
+upstream($alias, " ", $alias+"_api")
+!endprocedure
+'
+!procedure context_supplier($name, $alias, $direction)
+context($name, $alias)
+upstream($alias, " ", $alias+"_api", $direction)
+!endprocedure
+'
+!procedure partnership($context1, $context2)
+$context1 - $context2 : Partnership
+!endprocedure
+'
+!procedure partnership($context1, $context2, $direction)
+$context1 -$direction- $context2 : Partnership
+!endprocedure
+'
+!procedure interface($upstream, $role, $name, $alias)
+interface "$name" as $alias
+$alias - "$role" $upstream
+!endprocedure
+'
+!procedure interface($upstream, $role, $name, $alias, $direction)
+interface "$name" as $alias
+!if ($direction == right)
+    $upstream "$role" - $alias
+!endif
+!if ($direction == left)
+    $alias - "$role" $upstream
+!endif
+!endprocedure
+'
+!procedure upstream($upstream, $name, $alias)
+interface($upstream, "U", $name, $alias)
+!endprocedure
+'
+!procedure upstream($upstream, $name, $alias, $direction)
+interface($upstream, "U", $name, $alias, $direction)
+!endprocedure
+'
+!procedure downstream($downstream, $role, $upstream)
+$downstream "$role" -( $upstream
+!endprocedure
+'
+!procedure downstream($downstream, $role, $upstream, $direction)
+$downstream "$role" -$direction-( $upstream
+!endprocedure
+'
+!procedure generic_downstream($downstream, $upstream)
+downstream($downstream, "D", $upstream+"_api")
+!endprocedure
+'
+!procedure generic_downstream($downstream, $upstream, $direction)
+downstream($downstream, "D", $upstream+"_api", $direction)
+!endprocedure
+'
+@enduml

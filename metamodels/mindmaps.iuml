@@ -1,0 +1,69 @@
+@startuml Mind Maps
+<style>
+mindmapDiagram {
+    .goals .actors .impacts .deliverables {
+        LineColor #000000
+        Shadowing 0.0
+    }
+    .goals {
+        BackgroundColor #42C2FF
+    }
+    .actors {
+        BackgroundColor #85F4FF
+    }
+    .impacts {
+        BackgroundColor #B8FFF9
+    }
+    .deliverables {
+        BackgroundColor #EFFFFD
+    }
+    .benefits {
+        BackgroundColor #CAC5FF
+    }
+}
+</style>
+!function node($dir)
+!if $dir == left
+    !return "-"
+!else
+    !return "+"
+!endif
+!endfunction
+'
+!procedure goal($s)
+* $s <<goals>>
+!endprocedure
+'
+!procedure actor($s)
+** $s <<actors>>
+!endprocedure
+'
+!procedure actor($s, $dir)
+node($dir)node($dir) $s <<actors>>
+!endprocedure
+'
+!procedure impact($s)
+*** $s <<impacts>>
+!endprocedure
+'
+!procedure impact($s, $dir)
+node($dir)node($dir)node($dir) $s <<impacts>>
+!endprocedure
+'
+!procedure deliverable($s)
+**** $s <<deliverables>>
+!endprocedure
+'
+!procedure deliverable($s, $dir)
+node($dir)node($dir)node($dir)node($dir) $s <<deliverables>>
+!endprocedure
+'
+!procedure benefit($s)
+**** $s <<benefits>>
+!endprocedure
+'
+!procedure benefit($s, $dir)
+node($dir)node($dir)node($dir)node($dir) $s <<benefits>>
+!endprocedure
+'
+@enduml

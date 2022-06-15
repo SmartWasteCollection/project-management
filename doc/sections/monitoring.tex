@@ -1,0 +1,54 @@
+\section{Monitoring \& Control}
+\label{sec:monitoring}
+
+In questa sezione vengono riportate le strategie adottate per monitorare i task definiti in fase di pianificazione (\ref{sec:planning}). Inoltre, viene riportato il processo di accettazione del prodotto da parte del committente.
+
+\subsection{Monitoraggio del Progetto}
+Sono stati monitorati diversi aspetti riguardanti il progetto. Tale attività è ritenuta necessaria per rispettare la pianificazione effettuata ed accorgersi presto di eventuali problematiche. Nello specifico, sono stati utilizzati dei metodi formali per monitorare sia lo stato di avanzamento dei task, sia lo stato dei membri del team in termini di problematiche riscontrate e di produttività.
+
+\subsubsection{Progress Reporting}
+Per riportare lo stato di avanzamento dei task, il team ha deciso di affidarsi a due sistemi di reporting; in particolare:
+\begin{itemize}
+    \item \textbf{Trello}, per riportare lo svolgimento delle attività più recenti (\textit{current period reports});
+    \item \textbf{Boardify}, per riportare l'avanzamento del progetto coprendone l'intera storia (\textit{cumulative reports}).
+\end{itemize}
+Entrambi i sistemi scelti permettono di istanziare delle bacheche sulle quali è possibile tracciare l'andamento dei task e individuare lo scostamento tra lo stato di avanzamento attuale e la pianificazione. Inoltre, il secondo sistema è stato sviluppato internamente all'azienda: di conseguenza, i membri del developer team si sono trovati già familiari con tale strumento e ciò ha permesso di ridurre l'\textit{overhead} introdotto dal processo di monitoring.
+
+In aggiunta, il responsabile del prodotto (\textit{Marta}) ha considerato il processo di monitoring come fondamentale per lo sviluppo di codice. Quindi, è stato concordato di inserire tale processo nella \textbf{continuous integration} del prodotto. Infatti, è stato possibile stilare dei report relativi a ciascun task grazie ai messaggi di \textit{commit} effettuati dagli sviluppatori; in questo modo, è stato possibile automatizzare il controllo dello stato di avanzamento in ogni task senza introdurre maggiore \textit{overhead}.
+
+\subsubsection{Issues Log}
+Per tenere traccia di tutte le problematiche che emergono è stato redatto un documento chiamato \textit{Issues Log}. In particolare, tale documento ha permesso di identificare e analizzare meglio le problematiche, ed è stato utilizzato per evidenziare, in una determinata fase del progetto, quali problemi si trovassero in risoluzione e quali fossero già risolti. Inoltre, la condivisione di tale documento con il committente ha permesso di coinvolgerlo maggiormente e di incrementare la sua fiducia nei confronti del team.
+
+Dato un problema, l'\textit{Issues Log} ha permesso di tracciare:
+\begin{itemize}
+    \item nome del problema;
+    \item descrizione del problema;
+    \item proprietario del problema;
+    \item data di riscontro del problema;
+    \item data di risoluzione;
+    \item metodi risolutivi ipotetici;
+    \item metodo risolutivo utilizzato;
+    \item stato attuale.
+\end{itemize}
+
+\subsubsection{Meetings}
+Come anticipato nella sezione \ref{sec:planning-operative-rules}, quotidianamente sono stati condotti dei \textbf{Project Status Meeting}, ai quali ha partecipato ogni membro del developer team. In queste riunioni non è stato incluso il committente, tuttavia è stato sempre riportato l'esito con una breve descrizione del meeting (massimo 10 righe). Il programma di queste riunioni prevede:
+\begin{itemize}
+    \item breve presentazione dello stato di avanzamento dei task svolti dai membri del developer team;
+    \item aggiornamento dell'\textit{Issues Log};
+    \item aggiornamento (se necessario) della schedula;
+    \item aggiornamento del \textbf{Project Notebook}.
+\end{itemize}
+
+\subsection{Controllo del Progetto}
+Durante lo svolgimento del progetto è emerso un cambiamento di scope. In particolare, dalla riunione di inizio del requisito \textbf{Trucks Routing}, a cui ha partecipato anche il cliente, è scaturita la necessità di applicare una variazione importante alla logica di generazione delle missioni di raccolta dei rifiuti. Nella soluzione precedente le missioni venivano generate solamente dai cassonetti quando il volume occupato dalla spazzatura superava la soglia del 75\%. Il cliente ha manifestato l'esigenza di controllare quotidianamente il volume occupato dai cassonetti in ogni area residenziale per generare missioni nel caso in cui un numero elevato di cassonetti raggiunga il 50\% di volume occupato. Il cliente ha espresso tale bisogno motivato da risultati di ricerche interne, dimostrando che tale funzionalità possa essere effettivamente vantaggiosa per il loro sistema. I project manager, insieme al developer team, hanno valutato l'impatto di tale variazione all'interno del \textit{Project Impact Statement}, la cui gestione è descritta nella sezione \ref{sec:impact}. Nello specifico, a fronte di tale cambiamento di scope sono state fatte le seguenti considerazioni:
+\begin{itemize}
+    \item Importanza e Pertinenza: il cambiamento è sicuramente in linea con il \textit{goal} del progetto, in quanto mira ad una maggiore efficienza nella generazione di missioni. Inoltre, comporta l'introduzione di una \textit{feature} importante ad uno dei microservizi core del sistema.
+    \item Costi: per la realizzazione di tale task è stata allocata una risorsa per l'implementazione e una seconda risorsa (diversa dalla prima) per effettuarne una review. Per quanto riguarda le tempistiche di tale attività, non risulta dipendente da nessun altro task all'interno del requisito. Tuttavia, avendo a disposizione solo 4 risorse, i tempi di realizzazione saranno certamente dilatati. La stima della durata della singola attività risulta essere di almeno 8 ore, che eccede la soglia del 50\% della \textbf{Scope Bank} individuata per poter procedere senza modificare la schedula.
+    \item Ridefinizione Provvisoria della Schedula: il cambiamento è stato introdotto nella nuova schedula provvisoria (\refandback{gantt-redefinition}), la quale è stata presentata al committente. In particolare, la nuova schedula prevede un quantitativo di lavoro pari a 113 ore: questo è dato dal fatto che è stato prelevato il 50\% di ore della \textit{Scope Bank} (5 ore), mentre le restanti 3 ore dell'attività sono quelle che determinano l'effettiva variazione della schedula. Di conseguenza, la consegna del sistema sarà ritardata di un giorno lavorativo. In seguito a tale variazione, la dimensione della \textit{Scope Bank} ammonta a 5 ore. Prima di procedere con l'effettiva implementazione, è stata attesa la conferma da parte del cliente.
+\end{itemize}
+
+\subsection{Accettazione del Progetto}
+Una volta terminata la realizzazione di tutti i requisiti, il team si è assicurato che il sistema funzionasse nella sua interezza: ciò è stato possibile anche durante lo svolgimento del progetto grazie ai test sviluppati e ai processi di \textit{continuous integration} e \textit{continuous delivery}; tuttavia, si è voluta ottenere un'ulteriore conferma a progetto terminato eseguendo nuovamente i test e verificando il corretto funzionamento del sistema deployato.
+
+Successivamente, è stato condotto un meeting, come pianificato, per mostrare al committente il progetto terminato. Questi ha espresso la sua soddisfazione e ha concordato a procedere con la fase di chiusura del progetto.
