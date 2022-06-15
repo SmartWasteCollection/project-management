@@ -21,3 +21,4 @@ gantt-trucks-routing
 gantt-admin-dashboard
 gantt-citizen-app
 gantt
+gantt-redefinition
