@@ -1,1 +1,1 @@
-Diagramma Gantt contenente le attività e i task per portare a termine il \textit{Trucks Routing}.
+Project Network Diagram contenente le attività e i task per portare a termine il \textit{Trucks Routing}.

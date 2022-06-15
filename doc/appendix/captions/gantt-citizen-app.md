@@ -1,1 +1,1 @@
-Diagramma Gantt contenente le attività e i task per portare a termine la \textit{Citizen App}.
+Project Network Diagram contenente le attività e i task per portare a termine la \textit{Citizen App}.
