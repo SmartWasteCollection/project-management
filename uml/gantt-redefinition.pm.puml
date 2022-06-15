@@ -105,7 +105,7 @@ endtostart(5, 3)
 endtostart(3, 4)
 
 task(1, 3)
-task(2, 10)
+task(2, 13)
 task(3, 3)
 task(4, 5)
 task(5, 5)
@@ -129,6 +129,7 @@ endtostart(9, 10)
 
 task(11, 3)
 task(12, 6)
+task(SCOPE-CHANGE, 8)
 
 endtostart(2, 12)
 endtostart(11, 12)
@@ -136,6 +137,7 @@ endtostart(11, 12)
 'Defined in Gantt
 endtostart(5, 10)
 endtostart(5, 12)
+endtostart(12, SCOPE-CHANGE)
 
 --Plan extraordinary waste disposal missions--
 
@@ -146,10 +148,10 @@ task(15, 4)
 task(16, 7)
 
 'Defined in Gantt
-endtostart(12, 13)
-endtostart(12, 14)
-endtostart(12, 17)
-endtostart(12, 20)
+endtostart(SCOPE-CHANGE, 13)
+endtostart(SCOPE-CHANGE, 14)
+endtostart(SCOPE-CHANGE, 17)
+endtostart(SCOPE-CHANGE, 20)
 endtostart(14, 15)
 endtostart(13, 15)
 endtostart(15, 16)
