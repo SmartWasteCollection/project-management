@@ -362,12 +362,40 @@ In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overvie
     \end{itemize}
 }
 
-\subsubsection{Conditions of Satisfaction}
-
+\subsubsection{Conditions of Satisfaction \& Acceptance Criteria}
 Insieme al \textit{Project Overview Statement}, sono state individuate delle condizioni da rispettare per garantire il successo del progetto. In particolare, queste comprendono:
 \begin{itemize}
     \item \textbf{Ecosostenibilità}: vista la leadership nei servizi ambientali di \textit{Sphera}, le sue policy interne concedono di realizzare progetti esterni solo con aziende che rispettino determinate caratteristiche di sostenibilità ambientale. Nello specifico, per lo sviluppo del progetto l'azienda deve utilizzare delle \textit{capability} che riducano i consumi energetici almeno del 30\% rispetto ad uno standard di riferimento, che ammettano l'utilizzo di luce naturale per almeno il 50\% delle aree occupate e che abbiano almeno un contratto di forniture fatte con materiali riciclati. Fortunatamente, la nostra azienda soddisfa tali condizioni; sarà quindi necessario solamente conservare tali clausole.
     \item \textbf{Rispetto del Budget}: il committente ha sottolineato che tale progetto non restituisce valore all'azienda in termini di \textbf{Increased Revenue}, bensì permette di evitare costi e di migliorare il proprio servizio. Quindi, ha prestabilito un budget di 100.000€ da rispettare, anticipando la richiesta di un contratto con pagamento a misura. A fronte di tale condizione, i project manager hanno concordato l'aggiunta di importo da concordare in caso subentrino importanti cambiamenti di scope.
     \item \textbf{Utilizzo di Digital Twin}: il reparto IT del cliente ha concordato con il core team l'utilizzo della tecnologia basata su \textit{digital twin} per garantire compatibilità con estensioni future del progetto o anche funzionalità terze.
     \item \textbf{User Experience}: il committente ha richiesto di coinvolgere degli esperti di design di sua conoscenza per quanto riguarda la resa grafica delle componenti con interfaccia. Ha inoltre chiesto di realizzare dei prototipi (in forma di \textit{mock-up}) da presentare al \textit{design team} prima di procedere con la realizzazione dei front end.
+\end{itemize}
+
+Inoltre, sono stati stilati dei criteri di accettazione per ogni requisito precedentemente individuato. In particolare:
+\begin{itemize}
+    \item \textbf{Dumpster Infrastructure}:
+        \begin{enumerate}
+            \item Tutta l'infrastruttura (cassonetti e punti di raccolta) ha una controparte digitale rappresentata dal proprio \textit{digital twin}.
+            \item I cassonetti sono tutti dotati di un sensore di volume, un sensore di peso e un microprocessore connesso alla stazione wi-fi del punto di raccolta, grazie ai quali riescono a comunicare dati ed eventi con le varie componenti del sistema.
+            \item I cassonetti si aprono e si chiudono con chiamate da remoto.
+        \end{enumerate}
+    \item \textbf{Trucks Routing}:
+    \begin{enumerate}
+        \item Le missioni e i camioncini hanno una controparte digitale rappresentata dal proprio \textit{digital twin}.
+        \item La componente riesce a generare correttamente una missione ordinaria in seguito ad una notifica ricevuta da un cassonetto pieno.
+        \item La componente riesce a generare correttamente missioni straordinarie con frequenza giornaliera.
+    \end{enumerate}
+    \item \textbf{Admin Dashboard}:
+    \begin{enumerate}
+        \item \'E presente una pagina in cui si riescono a consultare i punti di raccolta.
+        \item \'E presente una pagina in cui si riescono a consultare i camioncini in missione.
+        \item \'E presente una pagina in cui si riescono a consultare le richieste di missione straordinaria.
+        \item \'E presente una pagina in cui si riescono a consultare i reclami.
+    \end{enumerate}
+    \item \textbf{Citizen App}:
+    \begin{enumerate}
+        \item \'E presente una pagina in cui si riescono a consultare i punti di raccolta.
+        \item \'E presente una pagina in cui si riescono a prenotare delle richieste di missione straordinaria.
+        \item \'E presente una pagina in cui si riescono a consultare le proprie richieste di missione straordinaria.
+    \end{enumerate}
 \end{itemize}
