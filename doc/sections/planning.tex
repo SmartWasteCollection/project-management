@@ -1,4 +1,4 @@
-\section{Planning}
+\usepackage{eurosym}\section{Planning}
 \label{sec:planning}
 
 In questa sezione viene portata avanti la pianificazione delle fasi successive del progetto. In particolare, verrà definito un modello per il \textit{Project Management Life Cycle} motivandone la scelta e verrà definita una schedula contenente le attività da svolgere per raggiungere gli obiettivi specificati nella sezione di scoping (\ref{sec:scoping}).
@@ -51,10 +51,41 @@ Ogni diagramma è suddiviso in sezioni che rappresentano le funzioni individuate
 Inoltre, la durata concordata per ogni task è rappresentata in ore/uomo, considerando però che ogni unità lavorativa dovrà essere successivamente sottoposta a review da parte di un altro membro del team.
 In passato, è stato dimostrato che tale approccio ha garantito una maggiore produttività e migliore qualità del codice; di conseguenza, i project manager hanno proposto tale modalità operativa già in fase di \textit{planning} e il committente, che ne ha compreso i vantaggi, ha concordato tale metodologia.
 
+\subsubsection{Analisi del Budget}
+A partire dalla definizione dei task e dei tempi necessari per svolgerli, è possibile individuare una stima del budget necessario per la realizzazione del progetto.
+In particolare, l'azienda paga i propri sviluppatori $45,00$\euro{} l'ora.
+Pertanto, dato che l'ammontare di ore totali di lavoro che le attività richiedono è di $317$ ore, il budget richiesto per sostenere i costi delle risorse umane è di $14265,00$\euro{}.
+
+Inoltre, tra i costi individuati vi sono quelli della piattaforma per la gestione di \textit{digital twin} e \textit{cloud providers}.
+Infatti, è necessario affidarsi a \textit{service provider} esterni che introducono inevitabilmente dei costi di acquisizione e gestione.
+Non avendo ancora valutato per quale optare tra i vari disponibili, non è possibile stimare con precisione il budget richiesto; tuttavia, si riporta di seguito una cifra indicativa dell'ordine di grandezza.
+La maggior parte dei \textit{cloud providers} forniscono macchine al costo di circa $100$\euro{} al mese, scegliendo una configurazione di risorse opportuna per il sistema da realizzare.
+Infine, piattaforme che gestiscono \textit{digital twin} calcolano i prezzi in base al numero di chiamate/messaggi.
+Il costo medio è di $1,20$\euro{} ogni $1.000.000$, pertanto si stima un costo mensile di circa $100$\euro.
+Tale stima è stata ottenuta considerando che il numero di persone che abitano l'area coperta dal sistema è circa $5.000.000$, che il numero medio di conferimenti mensili per ogni nucleo familiare è pari a $10$ (ognuno corrispondente a circa $5$ richieste al servizio), che vengono effettuate circa $3000$ raccolte al mese (ognuna corrispondente a circa $1000$ richieste al servizio).
+
+\subsubsection{Analisi dei Rischi}\label{sec:analisi-dei-rischi}
+Alla luce delle attività precedentemente individuate, è stata condotta un'analisi per determinare eventuali rischi che queste possono comportare (\textbf{risk identification}) e stabilirne probabilità e impatto (\textbf{risk assessment}), modalità di gestione (\textbf{risk mitigation}), modalità di controllo ed azioni correttive nel caso eventi negativi si verifichino (\textbf{risk monitoring \& control}).
+
+Un primo rischio riscontrato riguarda dei possibili, seppur minimi, cambiamenti di scope.
+La probabilità che questi si verifichino, come nella maggior parte dei progetti, è molto elevata; tuttavia, l'impatto di tali cambiamenti è ridotto grazie alla cospicua fase di analisi del dominio (realizzata mediante \textit{Domain Driven Design}) condotta insieme ad esperti messi a disposizione dal committente stesso.
+Perciò, si è deciso di gestire tale rischio introducendo una \textbf{scope bank}.
+
+Un altro rischio individuato riguarda l'incertezza e non esperienza sulla tecnologia impiegata per realizzare e gestire i \textit{digital twin}.
+È pertanto necessario effettuare degli studi per scegliere la tecnologia più opportuna e, successivamente, formare i componenti del team di sviluppo affinché siano in grado di utilizzarla.
+Si stima che tali attività non impattino significativamente sulla durata del progetto poiché gli sviluppatori conoscono già alcuni elementi di base riguardo a tale ambito.
+Perciò si è ritenuto sufficiente aumentare la durata dei task che includono l'utilizzo di tale tecnologia di 4 ore.
+
+Infine, è stato considerato il rischio che un componente del team di sviluppo non sia in grado di svolgere il proprio lavoro a causa di impegni relativi ad altri progetti.
+Nonostante ciò possa avere un impatto considerevole sul corretto avanzamento del progetto, la probabilità che ciò accada è però piuttosto bassa; perciò, si ritiene sufficiente stabilire un ritmo di lavoro sostenibile in termini di ore di lavoro giornaliere così da conciliare anche gli impegni relativi ad altri progetti.
+Inoltre, per monitorare il corretto svolgimento del progetto, si prevede di riportare con cadenza giornaliera lo stato di avanzamento personale dei membri del team.
+Questo permetterà di accorgersi immediatamente di eventuali ritardi e, in tal caso, verrà chiesto agli altri membri del team di aiutare il compagno, se possibilitati a farlo, o al componente del team in questione di dedicare più ore al progetto corrente.
+
 \subsubsection{Gantt Diagram \& Scope Bank}
 Una volta individuata la stima della durata di ogni task, è stata stilata la schedula definitiva considerando le risorse a disposizione.
 Nello specifico, il \textit{developer team} formato per il progetto è composto da 4 risorse; pertanto, si è pianificato di svolgere in parallelo al massimo 4 task.
 Il diagramma Gantt prodotto (\refandback{gantt}), considerando le risorse sopracitate, ha definito una schedula di 100 ore.
-Per far fronte a eventuali ritardi, che potrebbero essere causati da cambiamenti minori dello scope o da membri del team impegnati in altri progetti, si considera di allocare una \textit{Scope Bank} equivalente al 10\% della durata totale del progetto. Di conseguenza, al committente verrà presentata una schedula della durata totale di 110 ore.
+Come già discusso durante l'analisi dei rischi \ref{sec:analisi-dei-rischi}, si è deciso di allocare una \textit{scope bank} equivalente al 10\% della durata totale del progetto in modo da affrontare e gestire al meglio cambiamenti di scope.
+Di conseguenza, al committente verrà presentata una schedula della durata totale di 110 ore.
 Si prevede che il team dedichi al progetto circa 4 ore al giorno dato che i membri sono impegnati in altri progetti.
 Pertanto, la durata stimata del progetto è di 28 giorni lavorativi.
