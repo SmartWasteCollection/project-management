@@ -1,4 +1,4 @@
-\section{Scoping}
+\usepackage{eurosym}\section{Scoping}
 \label{sec:scoping}
 
 Per svolgere la fase di scoping al meglio, si simula che il progetto Smart Waste Collection venga proposto dal cliente \textit{Sphera}.
@@ -43,7 +43,7 @@ Al fine di chiarire eventuali dubbi ed ambiguità presenti nella proposta stessa
 
 In seguito, è stata condotta una seconda riunione con lo scopo di analizzare in maniera approfondita il dominio.
 A questa riunione hanno partecipato i project manager, i membri core del team e il facilitator del cliente; l'obiettivo di questo meeting era quello di tradurre i desideri del cliente in user stories e requisiti formali.
-L'output di questa riunione ha compreso, oltre a user stories e \textit{Requirements Breakdown Structure}, anche documenti formali utili successivamente al team tra cui \textit{Impact Mapping}, \textit{Benefit Mapping}, diagrammi dei casi d'uso e un vocabolario comune sotto forma di \textit{Ubiquitous Language}.
+L'output di questa riunione ha compreso, oltre a user stories e \textit{Requirements Breakdown Structure}, anche documenti formali utili successivamente al team tra cui \textit{Impact Mapping}, \textit{Benefit Mapping}, diagrammi dei casi d'uso e un vocabolario comune sotto forma di \textit{Ubiquitous Language}. Inoltre, è stato possibile decidere un \textit{Project Management Life Cycle Model} a partire dall'incertezza dei requisiti.
 
 L'obiettivo della terza ed ultima riunione è stato quello di stilare un documento di \textit{Project Overview Statement} in modo da formalizzare definitivamente il progetto.
 A questa hanno partecipato, proprio come nella prima, il cliente, i project manager, i membri core del team e il facilitator.
@@ -201,7 +201,7 @@ Inoltre, è stato prodotto un diagramma di \textit{benefit mapping} (\refandback
 \subsubsection{Casi d'Uso}
 Sulla base delle user stories individuate, sono stati prodotti dei diagrammi dei casi d'uso per meglio formalizzare i requisiti. In particolare, sono stati analizzati gli scenari:
 \begin{itemize}
-    \item \textbf{Ordinary waste disposal} (\refandback{ordinary-disposal-use-cases}): lo scenario in cui il cittadino si reca presso il \textit{collection point} per conferire i propri rifiuti; gli attori coinvolti in tale caso d'uso sono il cittadino e il camioncino dei rifiuti.
+    \item \textbf{Ordinary waste disposal} (\refandback{ordinary-disposal-use-cases}): lo scenario in cui il cittadino si reca presso il \textit{collection point} per conferire i propri rifiuti; gli attori coinvolti in tale caso d'uso sono il cittadino e il cassonetto dei rifiuti.
     \item \textbf{Ordinary waste collection} (\refandback{ordinary-collection-use-cases}): il processo che prevede la missione di raccolta dei rifiuti all'interno dei cassonetti da parte dei camioncini.
     \item \textbf{Extraordinary waste management} (\refandback{extraordinary-management-use-cases}): la gestione dei rifiuti straordinari mediante raccolta a casa dei cittadini da parte dei camioncini.
     \item \textbf{Dashboard} (\refandback{dashboard-use-cases}): l'utilizzo della dashboard da parte dei manager e della \textbf{Citizen App} da parte dei cittadini.
@@ -293,6 +293,12 @@ Il \textbf{goal} che accomuna i requisti è l'ottimizzazione della raccolta dei 
     \end{enumerate}
 \end{itemize}
 
+\subsubsection{Project Management Life Cycle Model}
+In seguito all'individuazione dei requisiti, è stato scelto il \textit{life cycle model} ritenuto più adatto per condurre il progetto. Dato il livello di conoscenza dei requisiti in questa fase, si è optato per un modello \textbf{tradizionale incrementale}.
+Tale scelta è stata effettuata perché sono noti a priori sia i goal, sia le soluzioni che permettono di raggiungere gli obiettivi; perciò, non è stato ritenuto necessario adottare un approccio agile.
+Ciò è dovuto anche all'utilizzo di un approccio \textit{domain driven} che ha permesso di studiare a fondo il dominio del problema.
+Tuttavia, non è stato scelto un approccio lineare (a cascata) poiché la formalizzazione dei requisiti mediante \textit{user stories} rende naturale la scomposizione in \textbf{milestone}.
+
 \subsection{Project Overview Statement}
 In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overview Statement} per ricevere l'approvazione da parte del \textit{senior management} a procedere con il progetto. Si assume che il \textit{POS} sia stato ben compreso dai \textit{senior manager} e che questi abbiano subito approvato l'inizio del progetto. Tale documento è riportato di seguito:
 
@@ -338,9 +344,10 @@ In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overvie
 
 \possec{Criteri di Successo}{
     \begin{enumerate}
-        \item I cassonetti dei rifiuti non raggiungono mai il 100\% di volume occupato.
-        \item Non si ricevono più di 5 reclami al mese.
-        \item Lo smaltimento di rifiuti straordinari avviene al 95\% in seguito a prenotazioni sulla \textbf{Citizen App}.
+        \item I cassonetti dei rifiuti non raggiungono mai il 100\% di volume occupato (\textit{Improved Service}).
+        \item Il numero medio di missioni mensili si riduce di almeno del 25\% (\textit{Avoided Cost}).
+        \item Non si ricevono più di 5 reclami al mese (\textit{Improved Service}).
+        \item Lo smaltimento di rifiuti straordinari avviene, almeno al 95\%, in seguito a prenotazioni sulla \textbf{Citizen App} (\textit{Improved Service}).
     \end{enumerate}
 }
 
@@ -354,3 +361,40 @@ In seguito all'analisi del dominio, è stato prodotto un \textit{Project Overvie
         \item C'è il rischio che i cittadini non sappiano sfruttare la tecnologia delle smart card e non riescano a conferire i propri rifiuti.
     \end{itemize}
 }
+
+\subsubsection{Conditions of Satisfaction \& Acceptance Criteria}
+Insieme al \textit{Project Overview Statement}, sono state individuate delle condizioni da rispettare per garantire il successo del progetto. In particolare, queste comprendono:
+\begin{itemize}
+    \item \textbf{Ecosostenibilità}: vista la leadership nei servizi ambientali di \textit{Sphera}, le sue policy interne concedono di realizzare progetti esterni solo con aziende che rispettino determinate caratteristiche di sostenibilità ambientale. Nello specifico, per lo sviluppo del progetto l'azienda deve utilizzare delle \textit{capability} che riducano i consumi energetici almeno del 30\% rispetto ad uno standard di riferimento, che ammettano l'utilizzo di luce naturale per almeno il 50\% delle aree occupate e che abbiano almeno un contratto di forniture fatte con materiali riciclati. Fortunatamente, la nostra azienda soddisfa tali condizioni; sarà quindi solamente necessario mantenerle.
+    \item \textbf{Utilizzo di Digital Twin}: il reparto IT del cliente ha concordato con il core team l'utilizzo della tecnologia basata su \textit{digital twin} per garantire compatibilità con estensioni future del progetto o anche funzionalità terze.
+    \item \textbf{User Experience}: il committente ha richiesto di coinvolgere degli esperti di design di sua conoscenza per quanto riguarda la resa grafica delle componenti con interfaccia. Ha pertanto chiesto di realizzare dei prototipi (in forma di \textit{mock-up}) da presentare al \textit{design team} da loro scelto per approvazione prima di procedere con la realizzazione dei front end.
+\end{itemize}
+
+Inoltre, sono stati stilati dei criteri di accettazione per ogni requisito precedentemente individuato. In particolare:
+\begin{itemize}
+    \item \textbf{Dumpster Infrastructure}:
+        \begin{enumerate}
+            \item Tutta l'infrastruttura (cassonetti e punti di raccolta) ha una controparte digitale rappresentata dal proprio \textit{digital twin}.
+            \item I cassonetti sono tutti dotati di un sensore di volume, un sensore di peso e un microprocessore connesso alla stazione wi-fi del punto di raccolta, grazie ai quali riescono a comunicare dati ed eventi con le varie componenti del sistema.
+            \item I cassonetti si aprono e si chiudono con chiamate da remoto.
+        \end{enumerate}
+    \item \textbf{Trucks Routing}:
+    \begin{enumerate}
+        \item Le missioni e i camioncini hanno una controparte digitale rappresentata dal proprio \textit{digital twin}.
+        \item Il componente riesce a generare correttamente una missione ordinaria in seguito ad una notifica ricevuta da un cassonetto pieno.
+        \item Il componente riesce a generare correttamente missioni straordinarie con frequenza giornaliera.
+    \end{enumerate}
+    \item \textbf{Admin Dashboard}:
+    \begin{enumerate}
+        \item \'E presente una pagina in cui si riescono a consultare i punti di raccolta.
+        \item \'E presente una pagina in cui si riescono a consultare i camioncini in missione.
+        \item \'E presente una pagina in cui si riescono a consultare le richieste di missione straordinaria.
+        \item \'E presente una pagina in cui si riescono a consultare i reclami.
+    \end{enumerate}
+    \item \textbf{Citizen App}:
+    \begin{enumerate}
+        \item \'E presente una pagina in cui si riescono a consultare i punti di raccolta.
+        \item \'E presente una pagina in cui si riescono a prenotare delle richieste di missione straordinaria.
+        \item \'E presente una pagina in cui si riescono a consultare le proprie richieste di missione straordinaria.
+    \end{enumerate}
+\end{itemize}

@@ -20,5 +20,6 @@ gantt-dumpster-infrastructure
 gantt-trucks-routing
 gantt-admin-dashboard
 gantt-citizen-app
+pert-diagram
 gantt
 gantt-redefinition
