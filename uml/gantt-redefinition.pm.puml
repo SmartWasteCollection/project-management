@@ -141,7 +141,7 @@ endtostart(12, SCOPE-CHANGE)
 
 --Plan extraordinary waste disposal missions--
 
-task(13, 4)
+task(13, 3)
 task(14, 6)
 
 task(15, 4)
@@ -157,7 +157,7 @@ endtostart(13, 15)
 endtostart(15, 16)
 
 task(17, 3)
-task(18, 3)
+task(18, 4)
 task(19, 4)
 
 endtostart(2, 19)
@@ -179,13 +179,14 @@ task(1, 5)
 task(2, 3)
 
 endtostart(TR, 15, AD, 1)
-endtostart(1, 2)
 
 task(3, 5)
 task(4, 3)
 
 endtostart(TR, 15, AD, 3)
 endtostart(3, 4)
+endtostart(4, 1)
+endtostart(1, 2)
 
 --Display trucks' real time status--
 
