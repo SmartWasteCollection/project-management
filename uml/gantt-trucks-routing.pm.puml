@@ -35,7 +35,7 @@ endtostart(11, 12)
 
 --Plan extraordinary waste disposal missions--
 
-task(13, 4)
+task(13, 3)
 task(14, 6)
 
 task(15, 4)
@@ -45,7 +45,7 @@ endtostart(13, 15)
 endtostart(15, 16)
 
 task(17, 3)
-task(18, 3)
+task(18, 4)
 task(19, 4)
 
 endtostart(2, 19)
