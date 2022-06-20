@@ -1,4 +1,4 @@
-@startuml PERT
+@startuml
 left to right direction
 ' Horizontal lines: -->, <--, <-->
 ' Vertical lines: ->, <-, <->
