@@ -17,7 +17,6 @@ jobs:
         with:
           working_directory: doc
           root_file: main.tex
-          latexmk_use_lualatex: true
       - name: Prepare assets
         run: |
           mkdir assets
